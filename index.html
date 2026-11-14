@@ -98,6 +98,29 @@ h2.sec::before{content:"0" counter(s) " /";display:block;font:500 .74rem "DM Mon
 .rail{-webkit-mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 44px),transparent)}
 .mq{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 @media (hover:none){.ring{display:none}}
+.aur i:nth-child(1){animation:dr1 24s ease-in-out infinite alternate;opacity:.2}
+.aur i:nth-child(2){animation:dr2 30s ease-in-out -9s infinite alternate;opacity:.17}
+.aur i:nth-child(3){animation:dr3 36s ease-in-out -16s infinite alternate;opacity:.13}
+@keyframes dr1{0%{transform:translate(0,0) scale(1)}33%{transform:translate(18vmax,10vmax) scale(1.15)}66%{transform:translate(6vmax,22vmax) scale(.95)}100%{transform:translate(-6vmax,8vmax) scale(1.1)}}
+@keyframes dr2{0%{transform:translate(0,0) scale(1.1)}40%{transform:translate(-20vmax,-8vmax) scale(.95)}70%{transform:translate(-8vmax,-20vmax) scale(1.2)}100%{transform:translate(10vmax,-6vmax) scale(1)}}
+@keyframes dr3{0%{transform:translate(0,0) scale(.9)}50%{transform:translate(-16vmax,12vmax) scale(1.2)}100%{transform:translate(14vmax,-10vmax) scale(1)}}
+.ring{width:18px;height:18px;margin:-9px 0 0 -9px;transition:width .2s,height .2s,margin .2s,background .2s,opacity .3s}
+.ring.h{width:36px;height:36px;margin:-18px 0 0 -18px}
+body:not(.pm) .ring{opacity:0}
+.name h1{font-size:clamp(3rem,10vw,7.4rem)}
+.nav{width:max-content}
+.nav .s{display:none}
+.hd{flex-wrap:wrap}
+@media (max-width:700px){
+.nav{top:auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));width:calc(100vw - 20px);justify-content:space-between;overflow:visible}
+.nav a{flex:1;text-align:center;padding:11px 2px;font-size:.76rem}
+.nav .f{display:none}.nav .s{display:inline}
+.wrap{padding-top:28px;padding-bottom:110px}
+.name h1{font-size:clamp(2.6rem,12vw,4.4rem)}
+.c{-webkit-backdrop-filter:none;backdrop-filter:none}
+.aur i{filter:blur(70px)}
+.bar{justify-content:center}.bar span:first-child{display:none}
+}
 </style>
 </head>
 <body>
@@ -179,14 +202,15 @@ sp(h1);
 document.querySelectorAll("h2.sec").forEach(function(h,k){h.id=["education","experience","toolkit","strengths"][k]});
 document.querySelector(".end").id="contact";document.querySelector(".bento").id="top";
 var L=[["Overview","top"],["Education","education"],["Experience","experience"],["Toolkit","toolkit"],["Strengths","strengths"],["Contact","contact"]];
-var nv=document.createElement("nav");nv.className="nav";nv.innerHTML=L.map(function(l){return'<a href="#'+l[1]+'">'+l[0]+"</a>"}).join("");B.appendChild(nv);
+var nv=document.createElement("nav");nv.className="nav";var SH={top:"Home",education:"Edu",experience:"Work",toolkit:"Tools",strengths:"Skills",contact:"Contact"};
+nv.innerHTML=L.map(function(l){return'<a href="#'+l[1]+'"><span class="f">'+l[0]+'</span><span class="s">'+SH[l[1]]+"</span></a>"}).join("");B.appendChild(nv);
 var as=nv.querySelectorAll("a");
 var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)as.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})})},{rootMargin:"-40% 0px -55% 0px"});
 L.forEach(function(l){so.observe(document.getElementById(l[1]))});
 var spb=document.getElementById("sp");
 addEventListener("scroll",function(){var h=document.documentElement;spb.style.width=h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100+"%"},{passive:true});
 var rg=document.querySelector(".ring"),rx=0,ry=0,tx=0,ty=0;
-addEventListener("pointermove",function(e){tx=e.clientX;ty=e.clientY;var t=e.target.closest&&e.target.closest("a,button,.pill,.c");rg.classList.toggle("h",!!t)});
+addEventListener("pointermove",function(e){tx=e.clientX;ty=e.clientY;B.classList.add("pm");var t=e.target.closest&&e.target.closest("a,button,.pill,.c");rg.classList.toggle("h",!!t)});
 (function lp(){rx+=(tx-rx)*.18;ry+=(ty-ry)*.18;rg.style.transform="translate("+rx+"px,"+ry+"px)";requestAnimationFrame(lp)})();
 document.querySelectorAll(".bento .rv,.kit .rv").forEach(function(el,k){el.style.transitionDelay=(k%6)*80+"ms"});
 document.querySelectorAll(".bento .c,.kit .c,#pf").forEach(function(c){
