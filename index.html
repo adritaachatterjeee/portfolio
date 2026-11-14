@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adrita Chatterjee — Professional Journey</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#0d0d0e;--s:#151516;--s2:#1c1c1e;--line:rgba(237,233,226,.09);--fg:#ede9e2;--mut:#8d8982;--a:#d8c9a8;--b:#a9b8a0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 "Space Grotesk",system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(700px circle at var(--x,70%) var(--y,0%),rgba(216,201,168,.07),transparent 60%)}
+.mono{font-family:"DM Mono",ui-monospace,monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.live{display:flex;align-items:center;gap:8px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 0 0 var(--b);animation:p 2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 8px transparent}}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.c{background:var(--s);border:1px solid var(--line);border-radius:24px;padding:22px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.c::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(216,201,168,.09),transparent 70%)}
+.c:hover{border-color:rgba(216,201,168,.3)}.c:hover::after{opacity:1}
+.name{grid-column:span 4;grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px}
+.name h1{font-size:clamp(3rem,10vw,6.6rem);line-height:.9;letter-spacing:-.05em;margin:12px 0 0;font-weight:700}
+.name h1 em{font-style:normal;color:var(--a)}
+.role{grid-column:span 2}.role p{margin:10px 0 0;font-size:1.35rem;line-height:1.2;min-height:3.6em;transition:opacity .3s}
+.st{grid-column:span 1;display:flex;flex-direction:column;justify-content:space-between;min-height:150px}
+.st b{font-size:2.5rem;letter-spacing:-.04em;font-weight:500;color:var(--a)}
+.st span{font-size:.8rem;color:var(--mut);line-height:1.3}
+.now{grid-column:span 2}
+.now h3{margin:10px 0 4px;font-size:1.3rem;font-weight:500}.now p{margin:0;color:var(--mut);font-size:.95rem}
+h2.sec{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.04em;margin:64px 0 6px;font-weight:700}
+.sub{color:var(--mut);margin:0 0 22px}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.arr{display:flex;gap:8px}
+.arr button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--s);color:var(--fg);font-size:1.1rem;cursor:pointer;transition:.2s}
+.arr button:hover{background:var(--a);color:var(--bg)}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.t{flex:0 0 min(340px,82vw);scroll-snap-align:start;min-height:430px;display:flex;flex-direction:column}
+.t .y{font-size:4.6rem;line-height:1;letter-spacing:-.06em;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(216,201,168,.5);margin:6px 0 14px}
+.t h3{font-size:1.5rem;line-height:1.1;margin:0 0 4px;letter-spacing:-.03em;font-weight:700}
+.t .o{color:var(--mut);font-size:.9rem;margin:0 0 14px}
+.t ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.t li{padding-left:18px;position:relative;color:#cfcbc3}.t li::before{content:"→";position:absolute;left:0;color:var(--a)}
+.stk{margin-top:auto;align-self:flex-start;transform:rotate(-3deg);background:var(--a);color:#15130f;font-weight:700;font-size:.8rem;padding:6px 12px;border-radius:99px}
+.prog{height:2px;background:var(--line);border-radius:2px;margin-top:6px}.prog i{display:block;height:100%;width:0;background:var(--a);border-radius:2px}
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.kit h3{margin:8px 0 6px;font-size:1.15rem;font-weight:500}.kit p{margin:0;color:var(--mut);font-size:.92rem}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.pill{font:500 1rem "Space Grotesk",sans-serif;background:var(--s);color:var(--fg);border:1px solid var(--line);border-radius:99px;padding:10px 20px;cursor:pointer;transition:.2s}
+.pill:hover{border-color:rgba(216,201,168,.4)}
+.pill[aria-pressed="true"]{background:var(--a);color:#15130f;border-color:var(--a)}
+#pf{min-height:130px;transition:opacity .25s}
+#pf p{margin:10px 0 0;font-size:1.25rem;line-height:1.4;max-width:60ch}
+.mq{overflow:hidden;white-space:nowrap;margin:56px -20px 0;padding:14px 0;border-block:1px solid var(--line)}
+.mq div{display:inline-block;animation:m 32s linear infinite}
+.mq span{font-size:1.5rem;font-weight:500;letter-spacing:-.02em;margin:0 18px;color:var(--mut)}.mq i{font-style:normal;color:var(--a)}
+@keyframes m{to{transform:translateX(-50%)}}
+.end{margin-top:70px;text-align:center}
+.end h2{font-size:clamp(2.4rem,9vw,6rem);line-height:.95;letter-spacing:-.05em;margin:0 0 14px;font-weight:700}
+.end h2 em{font-style:normal;color:var(--a)}
+.end p{color:var(--mut);margin:0 auto 24px;max-width:36ch}
+.btn{border:0;background:var(--fg);color:var(--bg);font:700 1rem "Space Grotesk",sans-serif;padding:14px 28px;border-radius:99px;cursor:pointer}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+@media (max-width:760px){.name{grid-column:span 6;min-height:260px}.role,.now{grid-column:span 6}.st{grid-column:span 3}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+.wrap{counter-reset:s;padding-top:92px}
+#top{scroll-margin-top:90px}
+h2.sec{counter-increment:s;scroll-margin-top:90px}
+h2.sec::before{content:"0" counter(s) " /";display:block;font:500 .74rem "DM Mono",monospace;letter-spacing:.14em;color:var(--a);margin-bottom:8px}
+.c{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.012));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 24px 48px -28px rgba(0,0,0,.8)}
+.name{background:radial-gradient(520px at 15% 115%,rgba(216,201,168,.18),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.012))}
+.name h1{font-size:clamp(3.4rem,11vw,7.4rem)}
+.name h1 em{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.03em}
+.name h1 em .lt{background:linear-gradient(100deg,#d8c9a8,#f6eedc 50%,#a9b8a0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lt{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*45ms)}
+@keyframes rise{from{opacity:0;transform:translateY(60%) rotate(6deg)}to{opacity:1;transform:none}}
+.st b{font-family:Fraunces,Georgia,serif;font-weight:400}
+.t{transition:transform .3s,border-color .3s}.t:hover{transform:translateY(-6px)}
+.aur{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aur i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(110px);opacity:.16;animation:dr 26s ease-in-out infinite alternate}
+.aur i:nth-child(1){background:#d8c9a8;top:-20%;left:-10%}
+.aur i:nth-child(2){background:#a9b8a0;bottom:-25%;right:-15%;animation-delay:-9s}
+.aur i:nth-child(3){background:#8fa3c4;top:30%;left:40%;opacity:.1;animation-delay:-16s}
+@keyframes dr{to{transform:translate(8vmax,6vmax) scale(1.2)}}
+.grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.nav{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:2px;padding:5px;max-width:calc(100vw - 20px);overflow-x:auto;scrollbar-width:none;border-radius:99px;background:rgba(21,21,22,.62);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line)}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font:500 .82rem "Space Grotesk",sans-serif;color:var(--mut);text-decoration:none;padding:8px 14px;border-radius:99px;white-space:nowrap;transition:.25s}
+.nav a:hover{color:var(--fg)}.nav a.on{background:rgba(216,201,168,.16);color:var(--a)}
+#sp{position:fixed;top:0;left:0;height:2px;width:0;z-index:60;background:linear-gradient(90deg,var(--b),var(--a))}
+.ring{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid rgba(216,201,168,.55);border-radius:50%;pointer-events:none;z-index:70;transition:width .25s,height .25s,margin .25s,background .25s}
+.ring.h{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(216,201,168,.12)}
+.sp{position:fixed;pointer-events:none;z-index:80;color:var(--a);font-size:14px;animation:pop .8s ease-out forwards}
+@keyframes pop{to{transform:translate(var(--dx),var(--dy)) scale(.2) rotate(180deg);opacity:0}}
+.rail{-webkit-mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 44px),transparent)}
+.mq{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+@media (hover:none){.ring{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"><span class="mono">adrita.portfolio / 2019 → now</span><span class="mono live">open to what’s next</span></div>
+
+  <div class="bento">
+    <div class="c name rv"><span class="mono">SaaS Solutions Consultant · Solution Architect · Project Lead</span><h1>Adrita<br><em>Chatterjee</em></h1></div>
+    <div class="c role rv"><span class="mono">currently</span><p id="rw">SaaS Solutions Consultant at HighRadius</p></div>
+    <div class="c st rv"><span class="mono">go-lives</span><div><b data-n="13" data-s="+">0</b><span>Global implementations across NA, EMEA and APAC</span></div></div>
+    <div class="c st rv"><span class="mono">automation</span><div><b data-n="60" data-s="%+">0</b><span>Improvement in manual process automation</span></div></div>
+    <div class="c now rv"><span class="mono">summary</span><h3>3+ years as a SaaS solutions consultant</h3><p>Building trusted relationships with stakeholders from analysts to CFOs across Fortune 500 accounts, with deep roots in FinTech and Order to Cash.</p></div>
+    <div class="c st rv"><span class="mono">trained</span><div><b data-n="7" data-s="+">0</b><span>Interns and hires trained</span></div></div>
+    <div class="c st rv"><span class="mono">cgpa</span><div><b data-n="9.04">0</b><span>B.Tech, KIIT</span></div></div><div class="c st rv"><span class="mono">arr</span><div><b style="font-size:1.8rem">$575K+</b><span>ARR across implemented projects</span></div></div><div class="c st rv"><span class="mono">csat</span><div><b style="font-size:1.8rem">4.5–5/5</b><span>Client CSAT, Promoter-level NPS</span></div></div>
+  </div>
+
+  <div class="hd"><div><h2 class="sec">Education &amp; Leadership</h2><p class="sub">KIIT · Drag or swipe to explore →</p></div><div class="arr"><button id="pv-rc" aria-label="Previous">←</button><button id="nx-rc" aria-label="Next">→</button></div></div>
+  <div class="rail" id="rc"></div>
+  <div class="prog"><i id="pg-rc"></i></div>
+
+  <div class="hd"><div><h2 class="sec">Professional Experience</h2><p class="sub">HighRadius · Intern to Consultant II. Drag or swipe to explore →</p></div><div class="arr"><button id="pv-rw2" aria-label="Previous">←</button><button id="nx-rw2" aria-label="Next">→</button></div></div>
+  <div class="rail" id="rw2"></div>
+  <div class="prog"><i id="pg-rw2"></i></div>
+  
+  
+
+  <h2 class="sec">Toolkit</h2><p class="sub">Tools and platforms I work with.</p>
+  <div class="kit" id="kit"></div>
+  <h2 class="sec">Key strengths</h2><p class="sub">Tap a strength to see it in action.</p>
+  <div class="pills" id="pills"></div>
+  <div class="c" id="pf"><span class="mono" id="pn"></span><p id="pt"></p></div>
+  <div class="mq"><div id="mq"></div></div>
+
+  <div class="end"><h2 class="rv">The next chapter <em>starts here.</em></h2><p class="rv">Let’s connect to talk SaaS solution consulting, implementations and customer success.</p><a class="btn rv" style="text-decoration:none;display:inline-block;margin:0 4px 10px" href="mailto:chatterjeeadrita944@gmail.com">Email me</a><a class="btn rv" style="text-decoration:none;display:inline-block;margin:0 4px 10px" href="https://www.linkedin.com/in/adritachatterjee30" target="_blank" rel="noopener">LinkedIn</a><br><button class="btn rv" style="background:transparent;color:var(--mut);border:1px solid var(--line)" onclick="scrollTo({top:0})">Back to top ↑</button></div>
+</div>
+
+<script>
+var CH=[
+{y:"2019",m:"2019 – 2023",t:"B.Tech at KIIT",o:"B.Tech, Computer Science & Communication Engineering · KIIT",p:["Graduated with a 9.04 CGPA","Balanced academics with leading on campus"]},
+{y:"E-Cell",m:"college years",t:"Executive → Senior Executive",o:"PCR Team · Entrepreneurship Cell",p:["Public & corporate relations for the cell","Led the PCR team","Brought corporate leaders to KIIT for sessions and workshops"]},
+{y:"22–23",m:"2022 – 23",t:"Chairperson",o:"KIIT Entrepreneurship Cell",p:["Led the whole E-Cell and every team in it","Management, executive and advisory bodies under one vision"],b:"Chairperson, Panel 2022–23"},
+{y:"Aug 22",m:"Aug 2022",t:"Intern, HighRadius",o:"HighRadius",p:["Straight onto live implementation projects","Earned the Highako Award after the internship"],b:"Highako Award, 2023"},
+{y:"2023",m:"Jul 2023 – Dec 2024",t:"Associate Consultant I",o:"HighRadius",p:["Built systems per design specifications and configured data field mappings","Performed agent-driven data analysis and loading for end-to-end deployments","Built HTML/CSS email templates for clients"],b:"HighFlyer H1 2024 · SPOT Award Q3 2024"},
+{y:"2025",m:"Jan 2025 – Jun 2026",t:"Consultant I",o:"HighRadius",p:["Configured the EIPP cloud platform and integrated payment processors, banks and ERPs through API and SFTP","Partnered with Product and Engineering on a centralized invoice delivery and POD-tracking repository; an enterprise client sunset its legacy platform for HighRadius","Led UAT, production cutovers, dry runs and hypercare, with virtual and on-site training for billing teams","Used SQL to validate and reconcile large datasets and built custom client reporting","Achieved CSAT of 4.5–5/5 and Promoter-level NPS; led 4+ consultants"]},
+{y:"2026",m:"Jul 2026 – Present",t:"Consultant II",o:"HighRadius",p:["Leading end-to-end EIPP implementations with Fortune 500 clients across NA, EMEA and APAC","Running AS-IS and To-be discovery and design sessions, plus fit-gap analysis with workarounds for product limits","Defining and quantifying success criteria to validate ROI and business impact","Recurring executive briefings with C-suite stakeholders (CFOs, CEOs)","Mentoring 3 intern batches and several lateral hires, 7+ people"],b:"Current role"}
+];
+var KIT=[["Solution architecture","Discovery, AS-IS and To-be design, fit-gap analysis and success criteria."],["ERP integrations","SAP, NetSuite, Sage Intacct and Microsoft D365 through API and SFTP."],["Payments & banks","Chase Paymentech, WorldPay, TSYS, Stripe and Fiserv; JPMC and Bank of America."],["Identity & email","SSO with Azure AD and Okta; Amazon SES (SMTP / email relay)."],["Data & tooling","SQL, API, Jira, Excel, HTML/CSS and AI productivity tools."],["Delivery & stakeholders","Requirement gathering, UAT, cutovers, hypercare, customer success, executive briefings, Waterfall and Agile project management."]];
+var RAILS=[["rc",0,3],["rw2",3,7]];
+var cards=CH.map(function(c,i){return'<div class="c t"><span class="mono">0'+(i<3?i+1:i-2)+' · '+c.m+'</span><div class="y">'+c.y+'</div><h3>'+c.t+'</h3><p class="o">'+c.o+'</p><ul>'+c.p.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>"+(c.b?'<span class="stk">'+c.b+"</span>":"")+"</div>"});RAILS.forEach(function(r){var el=document.getElementById(r[0]);el.innerHTML=cards.slice(r[1],r[2]).join("");wire(el,r[0])});
+document.getElementById("kit").innerHTML=KIT.map(function(k,i){return'<div class="c rv"><span class="mono">0'+(i+1)+'</span><h3>'+k[0]+"</h3><p>"+k[1]+"</p></div>"}).join("");
+var ST=[["Troubleshooting","Resolving issues quickly through hypercare, and escalating go-live blockers to Product with clear workarounds so launches stay on track."],["Accountability","Owning implementations from kickoff to hypercare for Fortune 500 clients, which is reflected in CSAT scores of 4.5–5/5."],["Meticulousness","Validating data readiness before kickoff and using SQL to reconcile large datasets, so what goes live is accurate."],["Adaptability","Delivering across NA, EMEA and APAC, with different ERPs, banks and processors, and moving from Associate Consultant to leading a team of 4+."],["Triage","Sorting what is critical from what can wait across UAT, cutover and hypercare, to protect timelines and keep stakeholders informed."]];
+var pl=document.getElementById("pills"),pf=document.getElementById("pf");
+ST.forEach(function(s,i){var b=document.createElement("button");b.className="pill";b.textContent=s[0];b.setAttribute("aria-pressed",i===0);b.onclick=function(){pf.style.opacity=0;setTimeout(function(){document.getElementById("pn").textContent=s[0];document.getElementById("pt").textContent=s[1];pf.style.opacity=1},200);pl.querySelectorAll(".pill").forEach(function(x){x.setAttribute("aria-pressed",x===b)})};pl.appendChild(b)});
+document.getElementById("pn").textContent=ST[0][0];document.getElementById("pt").textContent=ST[0][1];
+var tools=["SAP S/4HANA","NetSuite","Dynamics 365","Sage Intacct","SQL","Okta","Azure AD","Stripe","Fiserv","WorldPay","TSYS","Chase Paymentech"],m=tools.map(function(x){return"<span>"+x+"</span><i>✦</i>"}).join("");
+document.getElementById("mq").innerHTML=m+m;
+var W=["SaaS Solutions Consultant at HighRadius","Solution architecture and SaaS implementations for enterprise clients","Leading implementations across NA, EMEA and APAC","Trusted by stakeholders from analysts to CFOs"],wi=0,rw=document.getElementById("rw");
+setInterval(function(){rw.style.opacity=0;setTimeout(function(){wi=(wi+1)%W.length;rw.textContent=W[wi];rw.style.opacity=1},300)},3000);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+document.querySelectorAll(".st b[data-n]").forEach(function(el){
+  var n=parseFloat(el.dataset.n),s=el.dataset.s||"",d=String(n).indexOf(".")>-1?2:0,t0=null;
+  function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1500,1);el.textContent=(n*(1-Math.pow(1-p,3))).toFixed(d)+(p===1?s:"");if(p<1)requestAnimationFrame(f)}
+  requestAnimationFrame(f);
+});
+addEventListener("pointermove",function(e){document.body.style.setProperty("--x",e.clientX+"px");document.body.style.setProperty("--y",e.clientY+"px")});
+document.querySelectorAll(".c").forEach(function(c){c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--mx",e.clientX-r.left+"px");c.style.setProperty("--my",e.clientY-r.top+"px")})});
+function wire(rail,id){var step=function(){return rail.firstElementChild.offsetWidth+12};document.getElementById("nx-"+id).onclick=function(){rail.scrollBy({left:step()})};document.getElementById("pv-"+id).onclick=function(){rail.scrollBy({left:-step()})};rail.onscroll=function(){document.getElementById("pg-"+id).style.width=(rail.scrollLeft/(rail.scrollWidth-rail.clientWidth||1)*100)+"%"};var dn=false,sx=0,sl=0;rail.onpointerdown=function(e){if(e.pointerType!=="mouse")return;dn=true;sx=e.clientX;sl=rail.scrollLeft;rail.style.scrollSnapType="none"};addEventListener("pointermove",function(e){if(dn)rail.scrollLeft=sl-(e.clientX-sx)});addEventListener("pointerup",function(){if(dn){dn=false;rail.style.scrollSnapType=""}})}
+
+
+
+
+(function(){
+var B=document.body;
+B.insertAdjacentHTML("afterbegin",'<div class="aur"><i></i><i></i><i></i></div><div class="grain"></div><div id="sp"></div><div class="ring"></div>');
+var h1=document.querySelector(".name h1"),n=0;h1.setAttribute("aria-label","Adrita Chatterjee");
+function sp(el){Array.from(el.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split("").forEach(function(ch){var s=document.createElement("span");s.className="lt";s.setAttribute("aria-hidden","true");s.style.setProperty("--i",n++);s.textContent=ch;f.appendChild(s)});el.replaceChild(f,c)}else if(c.nodeName!=="BR")sp(c)})}
+sp(h1);
+document.querySelectorAll("h2.sec").forEach(function(h,k){h.id=["education","experience","toolkit","strengths"][k]});
+document.querySelector(".end").id="contact";document.querySelector(".bento").id="top";
+var L=[["Overview","top"],["Education","education"],["Experience","experience"],["Toolkit","toolkit"],["Strengths","strengths"],["Contact","contact"]];
+var nv=document.createElement("nav");nv.className="nav";nv.innerHTML=L.map(function(l){return'<a href="#'+l[1]+'">'+l[0]+"</a>"}).join("");B.appendChild(nv);
+var as=nv.querySelectorAll("a");
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)as.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})})},{rootMargin:"-40% 0px -55% 0px"});
+L.forEach(function(l){so.observe(document.getElementById(l[1]))});
+var spb=document.getElementById("sp");
+addEventListener("scroll",function(){var h=document.documentElement;spb.style.width=h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100+"%"},{passive:true});
+var rg=document.querySelector(".ring"),rx=0,ry=0,tx=0,ty=0;
+addEventListener("pointermove",function(e){tx=e.clientX;ty=e.clientY;var t=e.target.closest&&e.target.closest("a,button,.pill,.c");rg.classList.toggle("h",!!t)});
+(function lp(){rx+=(tx-rx)*.18;ry+=(ty-ry)*.18;rg.style.transform="translate("+rx+"px,"+ry+"px)";requestAnimationFrame(lp)})();
+document.querySelectorAll(".bento .rv,.kit .rv").forEach(function(el,k){el.style.transitionDelay=(k%6)*80+"ms"});
+document.querySelectorAll(".bento .c,.kit .c,#pf").forEach(function(c){
+ c.addEventListener("pointermove",function(e){if(e.pointerType!=="mouse")return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transition="transform .12s ease-out,border-color .3s";c.style.transform="perspective(900px) rotateY("+x*7+"deg) rotateX("+(-y*7)+"deg) translateY(-3px)"});
+ c.addEventListener("pointerleave",function(){c.style.transition="transform .5s,border-color .3s,opacity .7s";c.style.transform=""});
+});
+document.querySelectorAll(".btn,.arr button").forEach(function(b){
+ b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+(e.clientX-r.left-r.width/2)*.25+"px,"+(e.clientY-r.top-r.height/2)*.25+"px)"});
+ b.addEventListener("pointerleave",function(){b.style.transform=""});
+});
+addEventListener("click",function(e){for(var k=0;k<7;k++){var s=document.createElement("span"),a=Math.random()*6.28,d=30+Math.random()*50;s.className="sp";s.textContent="✦";s.style.left=e.clientX+"px";s.style.top=e.clientY+"px";s.style.setProperty("--dx",Math.cos(a)*d+"px");s.style.setProperty("--dy",Math.sin(a)*d+"px");B.appendChild(s);setTimeout(function(x){x.remove()},800,s)}});
+})();
+</script>
+</body>
+</html>
