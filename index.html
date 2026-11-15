@@ -106,7 +106,7 @@ section { scroll-margin-top: 100px; }
 .sec-num { font: 400 1.1rem var(--serif); color: var(--mut); letter-spacing: 0.05em; }
 .sec-title { font: 400 clamp(1.8rem, 3.5vw, 2.3rem) var(--serif); letter-spacing: -0.02em; }
 
-/* Interactive 3D Tilt Hero Portrait Stage */
+/* Interactive Cursor-Tracking Portrait Stage */
 .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px 0 70px; border-bottom: 1px solid var(--card-border); margin-bottom: 70px; }
 .avatar-stage {
   width: min(280px, 75vw);
@@ -119,28 +119,24 @@ section { scroll-margin-top: 100px; }
   margin-bottom: 36px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
-  perspective: 1000px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  perspective: 1200px;
   cursor: pointer;
   will-change: transform;
-  transition: box-shadow 0.3s ease;
-}
-.avatar-stage:hover {
-  box-shadow: 0 35px 70px rgba(0,0,0,0.15);
 }
 .avatar-stage img {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
   display: block;
-  transform: translateZ(30px);
-  transition: transform 0.1s ease-out;
+  will-change: transform;
+  transform: scale(1.05);
 }
 .avatar-stage::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 30%, rgba(20,22,18,0.2) 100%);
+  background: radial-gradient(circle at center, transparent 30%, rgba(20,22,18,0.25) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -358,10 +354,10 @@ details[open] summary::after { transform: rotate(45deg); }
 <div class="corner-br-tag">BASED IN HYDERABAD</div>
 
 <main class="wrap">
-  <!-- 01 Overview / Hero with Interactive 3D Tilt Portrait Stage -->
+  <!-- 01 Overview / Hero with Interactive Cursor-Tracking Portrait Stage -->
   <section class="hero rv" id="top">
     <div class="avatar-stage" id="tilt-stage">
-      <img src="adrita.jpg" alt="Adrita Chatterjee" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <img src="adrita.jpg" id="tilt-img" alt="Adrita Chatterjee" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
       <div style="display:none; width:100%; height:100%; place-items:center; font:italic 400 4rem var(--serif); color:var(--fg);">AC</div>
     </div>
     <div class="status-pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(46,204,113,0.1); border: 1px solid rgba(46,204,113,0.25); border-radius: 99px; font-size: 0.82rem; font-weight: 500; color: #27ae60; margin-bottom: 18px;">
@@ -596,9 +592,11 @@ details[open] summary::after { transform: rotate(45deg); }
 
 <script>
 (function(){
-  // Interactive 3D Tilt Effect on Portrait Stage (Mimicking Senbuzy Face Dynamics)
+  // Advanced Cursor-Tracking Parallax & 3D Tilt Engine
   const stage = document.getElementById('tilt-stage');
-  if(stage) {
+  const img = document.getElementById('tilt-img');
+  
+  if(stage && img) {
     stage.addEventListener('mousemove', e => {
       const rect = stage.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -607,14 +605,19 @@ details[open] summary::after { transform: rotate(45deg); }
       const yc = rect.height / 2;
       const dx = (x - xc) / xc;
       const dy = (y - yc) / yc;
-      stage.style.transform = `rotateY(${dx * 12}deg) rotateX(${-dy * 12}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-    stage.addEventListener('mouseleave', () => {
-      stage.style.transform = `rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)`;
-      stage.style.transition = 'transform 0.5s ease';
-    });
-    stage.addEventListener('mouseenter', () => {
+      
+      // Stage 3D rotation + Inner image parallax tracking shift
+      stage.style.transform = `perspective(1000px) rotateY(${dx * 16}deg) rotateX(${-dy * 16}deg) scale3d(1.03, 1.03, 1.03)`;
+      img.style.transform = `translate(${dx * 14}px, ${dy * 14}px) scale(1.08)`;
       stage.style.transition = 'none';
+      img.style.transition = 'none';
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      stage.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)`;
+      img.style.transform = `translate(0px, 0px) scale(1.05)`;
+      stage.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+      img.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
     });
   }
 
