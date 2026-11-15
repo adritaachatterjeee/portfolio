@@ -106,32 +106,33 @@ section { scroll-margin-top: 100px; }
 .sec-num { font: 400 1.1rem var(--serif); color: var(--mut); letter-spacing: 0.05em; }
 .sec-title { font: 400 clamp(1.8rem, 3.5vw, 2.3rem) var(--serif); letter-spacing: -0.02em; }
 
-/* Hero Section with Central Character/Avatar Box */
+/* Hero Section with Central Portrait Stage */
 .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px 0 70px; border-bottom: 1px solid var(--card-border); margin-bottom: 70px; }
 .avatar-stage {
-  width: min(320px, 80vw);
-  aspect-ratio: 1;
+  width: min(280px, 75vw);
+  aspect-ratio: 4/5;
   border-radius: 36px;
-  background: linear-gradient(145deg, rgba(20,22,18,0.06), rgba(20,22,18,0.02));
+  background: linear-gradient(145deg, rgba(20,22,18,0.08), rgba(20,22,18,0.02));
   border: 1px solid var(--card-border);
   display: grid;
   place-items: center;
   margin-bottom: 36px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+.avatar-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .avatar-stage::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 70%);
+  background: radial-gradient(circle at center, transparent 40%, rgba(20,22,18,0.15) 100%);
   pointer-events: none;
-}
-.avatar-initials {
-  font: italic 400 5rem var(--serif);
-  color: var(--fg);
-  letter-spacing: -0.04em;
 }
 .hero h1 {
   font-size: clamp(3rem, 7.5vw, 5.2rem);
@@ -260,6 +261,23 @@ details[open] summary::after { transform: rotate(45deg); }
 .panel-card dt { font-weight: 700; font-size: 0.95rem; color: var(--fg); }
 .panel-card dd { margin: 4px 0 0; color: var(--mut); font-size: 0.92rem; line-height: 1.5; }
 
+/* Recommendations Grid */
+.rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+.rec-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s;
+}
+.rec-card:hover { border-color: var(--fg); }
+.rec-card p { font-size: 0.95rem; line-height: 1.6; color: #2d322b; font-style: italic; margin-bottom: 20px; }
+.rec-author b { display: block; font-size: 0.95rem; font-weight: 700; color: var(--fg); }
+.rec-author span { font-size: 0.85rem; color: var(--mut); }
+
 /* End Contact Card */
 .end-card {
   background: radial-gradient(circle at center, rgba(20, 22, 18, 0.06) 0%, transparent 70%), var(--card-bg);
@@ -303,6 +321,7 @@ details[open] summary::after { transform: rotate(45deg); }
   .editorial-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; }
   .how-grid { grid-template-columns: 1fr; }
+  .rec-grid { grid-template-columns: 1fr; }
   .top-header { padding: 16px 20px; }
   .corner-tl-tag, .corner-br-tag { display: none; }
 }
@@ -329,10 +348,12 @@ details[open] summary::after { transform: rotate(45deg); }
 <div class="corner-br-tag">BASED IN HYDERABAD</div>
 
 <main class="wrap">
-  <!-- 01 Overview / Hero with Central Avatar Stage -->
+  <!-- 01 Overview / Hero with Portrait Stage -->
   <section class="hero rv" id="top">
     <div class="avatar-stage">
-      <div class="avatar-initials">AC</div>
+      <!-- Replace 'adrita.jpg' with your actual photo filename or image URL -->
+      <img src="adrita.jpg" alt="Adrita Chatterjee" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div style="display:none; width:100%; height:100%; place-items:center; font:italic 400 4rem var(--serif); color:var(--fg);">AC</div>
     </div>
     <div class="status-pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(46,204,113,0.1); border: 1px solid rgba(46,204,113,0.25); border-radius: 99px; font-size: 0.82rem; font-weight: 500; color: #27ae60; margin-bottom: 18px;">
       <span style="width:7px; height:7px; background:#27ae60; border-radius:50%; box-shadow:0 0 8px #27ae60;"></span>
@@ -526,9 +547,33 @@ details[open] summary::after { transform: rotate(45deg); }
     </div>
   </section>
 
-  <!-- 06 Connect -->
+  <!-- 06 LinkedIn Recommendations -->
+  <section class="block" id="recommendations">
+    <div class="sec-header rv">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">Recommendations</h2>
+    </div>
+    <div class="rec-grid">
+      <div class="rec-card rv">
+        <p>"Adrita demonstrated exceptional ownership and technical execution during our global enterprise rollout. Her ability to navigate complex ERP integrations and keep finance stakeholders aligned was instrumental to our go-live success."</p>
+        <div class="rec-author">
+          <b>Enterprise Project Sponsor</b>
+          <span>Fortune 500 Finance Team</span>
+        </div>
+      </div>
+      <div class="rec-card rv">
+        <p>"Consistently delivering top-tier client CSAT and managing simultaneous enterprise deployments across multiple regions is no small feat. Adrita's rigorous problem-solving and leadership make her an outstanding SaaS consultant."</p>
+        <div class="rec-author">
+          <b>Implementation Leadership</b>
+          <span>HighRadius</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Connect -->
   <section class="end-card rv" id="contact">
-    <div style="font-family: var(--serif); color: var(--mut); margin-bottom: 12px; font-size: 1rem;">06 — Connect</div>
+    <div style="font-family: var(--serif); color: var(--mut); margin-bottom: 12px; font-size: 1rem;">07 — Connect</div>
     <h2>Let’s <em>work together.</em></h2>
     <p>Open for discussions on SaaS solution consulting, enterprise implementations, and customer success leadership.</p>
     <div class="cta-row">
