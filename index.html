@@ -76,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 .brand-title { font-size: 0.72rem; color: var(--mut); letter-spacing: 0.15em; text-transform: uppercase; }
 
 .header-right { display: flex; align-items: center; gap: 14px; }
-.sound-btn, .lang-badge {
+.lang-badge {
   background: transparent;
   border: 1px solid var(--card-border);
   padding: 6px 14px;
@@ -87,7 +87,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.05em;
   transition: all 0.2s;
 }
-.sound-btn:hover, .lang-badge:hover { background: var(--card-hover); border-color: var(--fg); }
+.lang-badge:hover { background: var(--card-hover); border-color: var(--fg); }
 .portfolio-year { font-size: 0.78rem; font-weight: 600; color: var(--mut); letter-spacing: 0.1em; }
 
 /* Bottom Corner Watermarks */
@@ -337,7 +337,6 @@ details[open] summary::after { transform: rotate(45deg); }
     <span class="brand-title">SaaS Solutions Consultant</span>
   </div>
   <div class="header-right">
-    <button class="sound-btn" id="sound-toggle" aria-label="Toggle ambient effect">♪ Audio</button>
     <div class="lang-badge">EN</div>
     <div class="portfolio-year">PORTFOLIO — 2026</div>
   </div>
@@ -642,15 +641,6 @@ details[open] summary::after { transform: rotate(45deg); }
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     document.getElementById('sp').style.width = (winScroll / height) * 100 + '%';
   }, { passive: true });
-
-  // Sound toggle button interaction
-  const soundBtn = document.getElementById('sound-toggle');
-  let soundOn = false;
-  soundBtn.addEventListener('click', () => {
-    soundOn = !soundOn;
-    soundBtn.textContent = soundOn ? '♪ On' : '♪ Audio';
-    soundBtn.style.borderColor = soundOn ? 'var(--fg)' : 'var(--card-border)';
-  });
 })();
 </script>
 </body>
