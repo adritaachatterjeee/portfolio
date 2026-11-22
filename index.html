@@ -20,8 +20,8 @@ h1,h2,h3,p,ul,ol{margin:0}ul,ol{padding:0;list-style:none}a{color:inherit}img,sv
 .in{padding:0 7vw;width:100%}
 main{position:relative;z-index:2}
 
-/* gingham tablecloth (soft gradients replace expensive full-screen blur filter) */
-#cloth{position:fixed;inset:-80px 0;z-index:0;pointer-events:none;will-change:transform;transform:translateZ(0);background:repeating-linear-gradient(0deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),repeating-linear-gradient(90deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),#f7e4e4}
+/* gingham tablecloth */
+#cloth{position:fixed;inset:0;z-index:0;pointer-events:none;backface-visibility:hidden;transform:translateZ(0);background:repeating-linear-gradient(0deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),repeating-linear-gradient(90deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),#f7e4e4}
 #cloth::before{content:"";position:absolute;inset:-4%;opacity:.32;pointer-events:none;background:
   radial-gradient(ellipse 110px 44px at 8% 12%,rgba(31,54,31,.28) 0%,transparent 75%),
   radial-gradient(ellipse 130px 52px at 18% 19%,rgba(31,54,31,.22) 0%,transparent 75%),
@@ -29,6 +29,10 @@ main{position:relative;z-index:2}
   radial-gradient(ellipse 140px 54px at 92% 18%,rgba(31,54,31,.22) 0%,transparent 75%);
   transform:rotate(-4deg) scale(1.06)}
 #cloth::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.12) 0 1px,transparent 1px 3px),repeating-linear-gradient(-45deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px)}
+@media (max-width:760px){
+  #cloth{will-change:auto;transform:none}
+  #cloth::after{display:none}
+}
 body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 65% 25%,transparent 35%,rgba(70,0,12,.28))}
 
 #prog{position:fixed;left:0;top:0;right:0;height:8px;z-index:60;background:var(--air);transform-origin:0 50%;transform:scaleX(var(--q,0));will-change:transform}
@@ -423,8 +427,10 @@ function tick(){
   }
   const q=cl(y/totScroll);
   if(Math.abs(q-lastQ)>.0005){lastQ=q;prog.style.setProperty("--q",q.toFixed(4))}
-  const cy=-((y*.4)%80);
-  if(Math.abs(cy-lastClothY)>.2){lastClothY=cy;cloth.style.transform=`translate3d(0,${cy.toFixed(1)}px,0)`}
+  if(!mob){
+    const cy=-((y*.4)%80);
+    if(Math.abs(cy-lastClothY)>.2){lastClothY=cy;cloth.style.transform=`translate3d(0,${cy.toFixed(1)}px,0)`}
+  }
   let k=0;
   for(let i=0;i<idl.length;i++){if(idl[i].top<=y+vh*.45)k=i}
   if(vh+y>=totScroll+vh-4)k=idl.length-1;
@@ -440,7 +446,6 @@ const re=()=>{
 };
 addEventListener("scroll",kick,{passive:true});
 addEventListener("resize",()=>{
-  /* Ignore mobile browser address-bar height-only jitter during vertical scroll */
   if(Math.abs(innerWidth-lastW)>2){lastW=innerWidth;re()}
 });
 addEventListener("orientationchange",()=>{lastW=0;re()});
