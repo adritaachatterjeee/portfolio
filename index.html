@@ -5,416 +5,255 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Adrita Chatterjee | SaaS Solutions Consultant</title>
 <meta name="description" content="Adrita Chatterjee, SaaS Solutions Consultant. 3+ years delivering enterprise SaaS implementations for Fortune 500 clients across NA, EMEA and APAC.">
-<meta name="theme-color" content="#05060a">
-<meta property="og:title" content="Adrita Chatterjee | SaaS Solutions Consultant">
-<meta property="og:description" content="Solution architecture and SaaS implementations for enterprise clients.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2305060a'/%3E%3Ctext x='32' y='43' font-size='28' font-family='Syne, sans-serif' font-weight='700' text-anchor='middle' fill='%23e5d4b3'%3EAC%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f4f3fb">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add(matchMedia("(prefers-reduced-motion:reduce)").matches?"rm":"pinned")</script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
 <style>
-:root{
-  color-scheme: dark;
-  --bg: #05060a;
-  --bg-card: rgba(15, 20, 32, 0.75);
-  --fg: #f3f4f6;
-  --mut: #94a3b8;
-  --gold: #e5d4b3;
-  --gold-glow: rgba(229, 212, 179, 0.25);
-  --line: rgba(255, 255, 255, 0.08);
-  --line-hover: rgba(229, 212, 179, 0.4);
-  --sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --display: "Syne", system-ui, sans-serif;
-  --serif: Fraunces, Georgia, serif;
-}
-
+:root{--paper:#f4f3fb;--ink:#12112a;--cob:#2c3bff;--mint:#8de8c0;--blush:#ffb8d9;--d:"Anybody","Arial Narrow",system-ui,sans-serif;--b:"Figtree",system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+html:not(.rm){scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-html.rm{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--sans);overflow-x:clip}
+body{margin:0;--bg:var(--paper);--fg:var(--ink);background:var(--bg);color:var(--fg);font:400 1.05rem/1.55 var(--b);overflow-x:clip;transition:background-color .7s ease,color .7s ease}
+h1,h2,h3,p,ul,ol{margin:0}ul,ol{padding:0;list-style:none}a{color:inherit}
+:focus-visible{outline:3px solid var(--cob);outline-offset:3px;border-radius:8px}
+.in{padding:0 7vw;width:100%}
 
-/* Custom Interactive Cursor (Desktop) */
-@media (min-width: 1024px) {
-  body { cursor: default; }
-  .cursor{position:fixed;top:0;left:0;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s ease,width .2s,height .2s,background .2s;box-shadow:0 0 20px var(--gold)}
-  .cursor-follower{position:fixed;top:0;left:0;width:38px;height:38px;border:1px solid rgba(229,212,179,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .1s ease-out}
-  a:hover ~ .cursor, button:hover ~ .cursor, .card:hover ~ .cursor, .num:hover ~ .cursor{transform:translate(-50%,-50%) scale(2.2);background:rgba(229,212,179,0.15);border:1px solid var(--gold)}
+#prog{position:fixed;left:0;top:0;bottom:0;width:4px;z-index:60;background:var(--cob);transform:scaleY(0);transform-origin:50% 0}
+.logo{position:fixed;left:calc(20px + 1vw);top:calc(18px + env(safe-area-inset-top,0px));z-index:70;font:800 1.5rem/1 var(--d);text-decoration:none;color:#fff;mix-blend-mode:difference}
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:20px;z-index:50;display:flex;gap:2px;padding:5px;border-radius:99px;background:var(--ink);max-width:calc(100vw - 100px)}
+nav a{font-size:.88rem;font-weight:600;color:#aeb0cc;text-decoration:none;padding:8px 14px;border-radius:99px;white-space:nowrap;transition:color .2s,background .2s}
+nav a:hover{color:#fff}nav a.on{color:var(--ink);background:var(--mint)}
+nav a.cta{background:var(--cob);color:#fff;margin-left:4px}
+
+.scene{position:relative;height:calc(var(--len,100)*1vh);height:calc(var(--len,100)*1svh)}
+.stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;align-items:center}
+.cap{position:absolute;left:7vw;right:7vw;top:calc(88px + env(safe-area-inset-top,0px));font:700 clamp(1.2rem,2.4vw,1.8rem)/1.15 var(--d)}
+
+/* hero */
+.name{position:relative;z-index:2;font:800 clamp(2.2rem,10.6vw,10.5rem)/.92 var(--d);letter-spacing:-.02em;font-variation-settings:"wdth" calc(52 + var(--p,0)*62);translate:calc(var(--mx,0)*-10px) calc(var(--my,0)*-8px)}
+.name div{white-space:nowrap}.name .b{color:var(--cob)}
+.role{position:relative;z-index:2;margin-top:24px;font:600 clamp(1.1rem,2.2vw,1.6rem)/1.3 var(--b)}
+.blob{position:absolute;border-radius:50%;pointer-events:none}
+.b1{width:34vmax;height:34vmax;background:var(--mint);right:-8vmax;top:6vh;translate:calc(var(--mx,0)*24px) calc(var(--my,0)*24px + var(--p,0)*-18vh)}
+.b2{width:12vmax;height:12vmax;background:var(--blush);left:42vw;bottom:8vh;translate:calc(var(--mx,0)*-40px) calc(var(--my,0)*-30px + var(--p,0)*-30vh)}
+.badge{position:absolute;z-index:3;right:7vw;bottom:calc(8vh + env(safe-area-inset-bottom,0px));width:clamp(120px,17vw,220px);rotate:calc(var(--p,0)*540deg)}
+.badge text{font:700 15px var(--b);fill:var(--ink);letter-spacing:.06em}
+
+/* statement */
+.stm{font:700 clamp(1.9rem,5.5vw,4.8rem)/1.08 var(--d);letter-spacing:-.015em;max-width:16em}
+.w{display:inline-block;opacity:.22}
+.stm-sub{margin-top:26px;font:600 clamp(1.05rem,2vw,1.4rem) var(--b);color:var(--mint);opacity:calc((var(--p,0) - .6)*4)}
+
+/* journey stack */
+.jw{padding:16vh 7vw 18vh}
+.jw h2{font:800 clamp(2.4rem,7vw,6rem)/.98 var(--d);letter-spacing:-.02em;max-width:11em;margin-bottom:8vh}
+.sc{position:sticky;top:calc(88px + var(--i)*14px);margin-bottom:12vh;transform-origin:50% 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(16px,3vw,48px);padding:clamp(22px,3vw,40px);border-radius:30px;background:var(--blush);color:var(--ink);box-shadow:0 -14px 30px -18px rgba(18,17,42,.35)}
+.sc.g1{background:var(--mint)}.sc.now{background:var(--ink);color:var(--paper)}
+.sc:last-child{margin-bottom:0}
+.when{font:800 clamp(1.4rem,2.8vw,2.4rem)/1.05 var(--d)}
+.org{margin-top:8px;font-weight:600;opacity:.75}
+.sc h3{font:700 clamp(1.3rem,2.3vw,1.9rem)/1.15 var(--d)}
+.sc li{position:relative;padding-left:18px;margin-top:9px;font-size:.98rem;line-height:1.5}
+.sc li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.55}
+.bd{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.bd span{font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:99px;background:var(--ink);color:var(--paper)}
+.sc.now .bd span{background:var(--mint);color:var(--ink)}
+
+/* impact */
+.grid{position:absolute;left:7vw;right:7vw;top:calc(150px + env(safe-area-inset-top,0px));bottom:calc(40px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px}
+.t{position:relative;isolation:isolate;overflow:hidden;border-radius:26px;background:#fff;padding:clamp(16px,2.2vw,30px);display:flex;flex-direction:column;justify-content:flex-end;will-change:transform}
+.t::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);transform:translateY(calc(100% - var(--e,0)*100%))}
+.t b{font:800 clamp(2.2rem,9vw,8.5rem)/.9 var(--d);color:#fff;mix-blend-mode:difference;letter-spacing:-.02em;font-variation-settings:"wdth" 85}
+.t span{margin-top:8px;font-weight:600;color:#fff;mix-blend-mode:difference;max-width:22em;font-size:clamp(.85rem,1.4vw,1.05rem)}
+
+/* process */
+.pg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:5vw;align-items:center;padding-top:60px}
+.ring{position:relative;width:min(100%,46vh,420px);width:min(100%,46svh,420px);justify-self:center}
+.ring svg{display:block;width:100%;transform:rotate(-90deg)}
+.ring .tr{fill:none;stroke:rgba(18,17,42,.14);stroke-width:14}.ring .fl{fill:none;stroke:var(--ink);stroke-width:14;stroke-linecap:round}
+.ring div{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:800 clamp(4rem,13vw,10rem)/.9 var(--d)}
+.ring small{font:600 1rem var(--b);margin-top:6px}
+.sl li{padding:8px 0;border-bottom:1px solid rgba(18,17,42,.16);opacity:.32;transition:opacity .35s}
+.sl li.on{opacity:1}
+.sl h3{font:700 clamp(1.5rem,3.4vw,2.8rem)/1.1 var(--d)}
+.sl .x{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}.sl li.on .x{grid-template-rows:1fr}
+.sl .x p{overflow:hidden;max-width:28em;font-size:1.05rem}.sl li.on .x p{padding-top:6px}
+
+/* approach */
+.rw{position:absolute;left:7vw;right:7vw;top:46%;height:0}
+.col{will-change:transform}
+.it{height:1.1em;font:800 clamp(1.9rem,7vw,6.4rem)/1.1 var(--d);letter-spacing:-.02em;white-space:nowrap;will-change:opacity}
+.dsc{position:absolute;left:7vw;right:7vw;bottom:calc(9vh + env(safe-area-inset-bottom,0px));font-size:clamp(1.05rem,2vw,1.4rem);max-width:28em;transition:opacity .3s}
+.cnt{position:absolute;right:7vw;bottom:calc(9vh + env(safe-area-inset-bottom,0px));font:800 1.6rem var(--d);color:var(--mint)}
+
+/* toolkit */
+.tk{padding:16vh 0 12vh}
+.tk h2{font:800 clamp(2.4rem,7vw,6rem)/.98 var(--d);letter-spacing:-.02em;margin:0 7vw 7vh}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:20px;padding:26px 7vw;border-top:1px solid rgba(18,17,42,.2);clip-path:inset(0 0 100% 0);transition:clip-path .9s cubic-bezier(.2,.8,.2,1) calc(var(--i)*110ms),background .3s,color .3s,padding .3s}
+.in-v .row{clip-path:inset(0)}
+.row:hover{background:var(--ink);color:var(--paper);padding-left:calc(7vw + 18px)}
+.row h3{font:700 clamp(1.2rem,2vw,1.6rem)/1.2 var(--d)}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{padding:8px 16px;border:1.5px solid currentColor;border-radius:99px;font-weight:600;font-size:.95rem;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{background:var(--cob);color:#fff;border-color:var(--cob)}
+
+/* contact */
+.ct{min-height:100vh;min-height:100svh;display:grid;place-content:center;text-align:center;padding:12vh 7vw calc(12vh + env(safe-area-inset-bottom,0px))}
+.ct h2{font:800 clamp(3.4rem,17vw,15rem)/.86 var(--d);letter-spacing:-.025em;transform-origin:50% 60%}
+.ct p{margin:22px auto 30px;max-width:28em;font-size:1.15rem}
+.btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:16px 32px;border-radius:99px;background:var(--mint);color:var(--ink);border:2px solid var(--mint);transition:background .2s,color .2s}
+.btn.g{background:transparent;color:var(--paper);border-color:var(--paper)}.btn:hover{background:var(--paper);color:var(--cob);border-color:var(--paper)}
+.foot{margin-top:8vh;font-size:.85rem;opacity:.7}
+
+#cur{position:fixed;left:0;top:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:99;transition:width .25s,height .25s,margin .25s}
+#cur.big{width:64px;height:64px;margin:-32px 0 0 -32px}
+.toast{position:fixed;left:50%;bottom:90px;translate:-50% 20px;background:var(--ink);color:#fff;padding:11px 22px;border-radius:99px;opacity:0;transition:opacity .3s,translate .3s;pointer-events:none;z-index:90}
+.toast.show{opacity:1;translate:-50% 0}
+
+@media (max-width:760px){
+ nav{top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));left:10px;right:10px;max-width:none;justify-content:space-between}
+ nav a{flex:1;text-align:center;padding:10px 2px;font-size:.72rem}nav a.cta{margin:0}
+ .logo{left:20px}
+ .sc{grid-template-columns:1fr;gap:10px;top:calc(76px + var(--i)*10px)}
+ .pg{grid-template-columns:1fr;gap:12px;padding-top:70px}.ring{width:min(46vw,26vh);width:min(46vw,26svh)}
+ .row{grid-template-columns:1fr;gap:10px}
+ .grid{top:calc(140px + env(safe-area-inset-top,0px));bottom:84px}
+ .badge{bottom:96px;width:110px}.dsc,.cnt{bottom:96px}.cnt{top:calc(88px + env(safe-area-inset-top,0px));bottom:auto}.toast{bottom:150px}
 }
-@media (max-width: 1023px) {
-  .cursor, .cursor-follower { display: none; }
-}
-
-h1,h2,h3,p,ul{margin:0}a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
-
-/* Dynamic Ambient Aurora Background */
-.aur{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.aur i{position:absolute;width:65vmax;height:65vmax;border-radius:50%;filter:blur(130px);will-change:transform;transition:opacity 1.6s;opacity:.22}
-.aur i:nth-child(1){background:#3b82f6;top:-20%;left:-10%;animation:d1 60s ease-in-out infinite alternate;transform:translate(calc(var(--p,0)*35vmax),calc(var(--p,0)*20vmax))}
-.aur i:nth-child(2){background:#8b5cf6;bottom:-25%;right:-10%;animation:d2 75s ease-in-out -20s infinite alternate;transform:translate(calc(var(--p,0)*-30vmax),calc(var(--p,0)*-18vmax))}
-.aur i:nth-child(3){background:#06b6d4;top:35%;left:35%;animation:d3 90s ease-in-out -40s infinite alternate;transform:translate(calc(var(--p,0)*-20vmax),calc(var(--p,0)*25vmax))}
-.aur[data-s="a"] i:nth-child(1){opacity:.32}.aur[data-s="a"] i:nth-child(2){opacity:.08}.aur[data-s="a"] i:nth-child(3){opacity:.18}
-.aur[data-s="b"] i:nth-child(1){opacity:.2}.aur[data-s="b"] i:nth-child(2){opacity:.28}.aur[data-s="b"] i:nth-child(3){opacity:.2}
-.aur[data-s="c"] i:nth-child(1){opacity:.12}.aur[data-s="c"] i:nth-child(2){opacity:.32}.aur[data-s="c"] i:nth-child(3){opacity:.15}
-.aur::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,10,.35),rgba(5,6,10,.2) 50%,rgba(5,6,10,.5))}
-@keyframes d1{to{transform:translate(10vmax,8vmax) scale(1.12)}}
-@keyframes d2{to{transform:translate(-11vmax,-7vmax) scale(1.08)}}
-@keyframes d3{to{transform:translate(-8vmax,8vmax) scale(1.15)}}
-
-#sp{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--gold),#60a5fa);box-shadow:0 0 12px var(--gold)}
-
-/* Floating Glass Navigation */
-.nav{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:4px;padding:6px;width:max-content;max-width:calc(100vw - 24px);border-radius:99px;background:rgba(10, 14, 23, 0.8);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,0.4)}
-.nav a{position:relative;z-index:1;font-size:.88rem;font-weight:500;color:var(--mut);text-decoration:none;padding:8px 16px;border-radius:99px;white-space:nowrap;transition:color .25s,background .25s}
-.nav a:hover:not(.on):not(.cta){background:rgba(255,255,255,.06);color:var(--fg)}
-.nav a.on{color:var(--fg)}
-.nav a.cta,.nav a.cta.on{background:var(--gold);color:#05060a;font-weight:700;margin-left:4px;box-shadow:0 0 20px var(--gold-glow)}
-.nav .s{display:none}
-.ind{position:absolute;top:6px;bottom:6px;left:0;width:0;border-radius:99px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);transition:transform .35s cubic-bezier(.3,.8,.3,1),width .35s}
-
-main{position:relative;z-index:1}
-.in{max-width:1040px;margin:0 auto;padding:0 24px;width:100%}
-.label{font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.label::after{content:"";height:1px;flex:1;max-width:50px;background:var(--gold);opacity:.4}
-
-h2{font:700 clamp(2.2rem,4.5vw,3.4rem)/1.1 var(--display);letter-spacing:-.03em}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font:700 0.95rem var(--sans);padding:14px 28px;border-radius:99px;border:1px solid transparent;cursor:pointer;background:linear-gradient(135deg,#fff,var(--gold));color:#05060a;box-shadow:0 10px 30px -10px var(--gold-glow);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px -10px var(--gold-glow)}
-.btn.ghost{background:rgba(255,255,255,.03);color:var(--fg);border-color:var(--line);box-shadow:none}
-.btn.ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold)}
-.row{display:flex;flex-wrap:wrap;gap:14px}
-
-/* Hero Section */
-.hero{min-height:100vh;min-height:100svh;display:grid;align-items:center;padding:110px 0 80px;position:relative}
-.hero-in{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;will-change:transform,opacity}
-.hero-in.has-photo{grid-template-columns:1fr 300px}
-.hero h1{font-family:var(--display);font-size:clamp(3.2rem,9.5vw,6.8rem);line-height:.96;letter-spacing:-.04em;font-weight:800}
-.hero h1 em{font:italic 400 1em/1 var(--serif);letter-spacing:-.03em;color:var(--gold);padding:0 .08em .12em 0}
-.pitch{font-size:clamp(1.1rem,2.2vw,1.35net);line-height:1.55;color:#cbd5e1;max-width:34em;margin:24px 0 32px}
-.photo{margin:0;perspective:1000px}.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;border:1px solid var(--line);display:block;box-shadow:0 30px 60px rgba(0,0,0,0.5);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-
-.cue{position:absolute;left:0;right:0;bottom:calc(30px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
-.cue::after{content:"";display:block;width:1px;height:40px;margin:10px auto 0;background:linear-gradient(var(--gold),transparent);animation:bob 2s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(10px);opacity:.3}}
-
-/* Pinned Scroll Sections (Senbuzy-style dynamic narrative) */
-.stage{padding:90px 0 50px}
-.pin.p-on{height:calc(var(--len)*1vh);height:calc(var(--len)*1svh)}
-.p-on .stage{position:sticky;top:0;height:100vh;height:100svh;padding:90px 0 60px;display:grid;align-content:center;overflow:hidden}
-
-.jgrid{display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:center}
-.group{font-family:var(--mono,monospace);font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;transition:opacity .3s}
-.big{font:800 clamp(5rem,18vw,12rem)/.9 var(--display);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.2);letter-spacing:-.04em}
-.big.sw{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
-@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
-
-.cards{display:grid;gap:16px}
-.p-on .cards{position:relative;display:block;height:var(--ch,440px)}
-.card{padding:26px 28px;border-radius:24px;background:var(--bg-card);border:1px solid var(--line);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transition:border-color .3s,box-shadow .3s;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
-.card:hover{border-color:var(--line-hover);box-shadow:0 30px 60px rgba(0,0,0,0.4)}
-.p-on .card{position:absolute;left:0;right:0;top:50%;transform:translateY(calc(-50% + var(--y,0px)));opacity:var(--o,0);will-change:transform,opacity}
-.when{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-.card h3{font:700 clamp(1.4rem,2.5vw,1.9rem)/1.2 var(--display);margin:6px 0 4px;color:#fff}
-.org{color:var(--gold);font-size:.95rem;font-weight:600;margin-bottom:12px}
-.card ul{list-style:none;padding:0;display:grid;gap:8px}
-.card li{position:relative;padding-left:20px;color:#cbd5e1;line-height:1.55}
-.card li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:bold}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.badge{font-size:.78rem;font-weight:700;color:#05060a;background:var(--gold);padding:5px 12px;border-radius:99px;box-shadow:0 0 15px var(--gold-glow)}
-
-.bar{height:2px;background:var(--line);border-radius:2px;margin-top:28px;position:relative}
-.bar i{position:absolute;left:0;top:0;bottom:0;width:calc(var(--f,1)*100%);background:var(--gold);border-radius:2px;box-shadow:0 0 10px var(--gold)}
-.dots{display:flex;justify-content:space-between;margin-top:10px;font-size:.75rem;font-weight:600;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
-.dots span{transition:color .3s}.dots span.on{color:var(--gold)}
-
-/* Impact section */
-.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
-.num{padding:28px 22px;border-radius:24px;background:var(--bg-card);border:1px solid var(--line);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
-.p-on .num{opacity:var(--o,0);transform:scale(var(--s,.95)) translateY(calc((1 - var(--o,0))*20px))}
-.num b{display:block;font:800 clamp(2.2vw,4.2vw,3.2rem)/1 var(--display);color:var(--gold);white-space:nowrap;text-shadow:0 0 20px var(--gold-glow)}
-.num span{display:block;margin-top:12px;font-size:.92rem;color:var(--mut);line-height:1.45}
-
-/* Process section */
-.track{position:relative;display:flex;justify-content:space-between;margin-top:44px}
-.track::before{content:"";position:absolute;left:21px;right:21px;top:21px;height:1px;background:var(--line)}
-.fill{position:absolute;left:21px;top:21px;height:1px;background:var(--gold);width:calc((100% - 42px)*var(--f,1));box-shadow:0 0 10px var(--gold)}
-.node{position:relative;z-index:1;width:42px;height:42px;border-radius:50%;background:var(--bg);border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font:700 1rem var(--sans);transition:background .3s,color .3s,transform .3s,box-shadow .3s}
-.node.on{background:var(--gold);color:#05060a;box-shadow:0 0 20px var(--gold)}
-.node.cur{transform:scale(1.25);box-shadow:0 0 25px var(--gold)}
-.desc{position:relative;margin-top:38px;display:grid;gap:18px}
-.p-on .desc{display:block;height:var(--dh,220px)}
-.sd h3{font:700 clamp(1.8rem,4vw,3rem)/1.1 var(--display);color:#fff}
-.sd .k{font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.sd p{font-size:clamp(1.05rem,2vw,1.3rem);color:#cbd5e1;max-width:32em;margin-top:10px;line-height:1.6}
-.p-on .sd{position:absolute;left:0;right:0;top:0;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;pointer-events:none}
-.p-on .sd.on{opacity:1;transform:none}
-
-/* Approach section */
-.word{position:relative;margin-top:34px;display:grid;gap:28px}
-.p-on .word{display:block;height:var(--wh,280px)}
-.sw2 h3{font:700 clamp(2.4rem,8vw,5.8rem)/1.05 var(--display);letter-spacing:-.03em;background:linear-gradient(100deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.1em}
-.sw2 p{font-size:clamp(1.05rem,2vw,1.3rem);color:#cbd5e1;max-width:32em;margin-top:14px;line-height:1.6}
-.p-on .sw2{position:absolute;left:0;right:0;top:0;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;pointer-events:none}
-.p-on .sw2.on{opacity:1;transform:none}
-
-/* Toolkit */
-.tools{padding:90px 0 30px}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:30px}
-.tool{padding:24px 26px;border-radius:22px;background:var(--bg-card);border:1px solid var(--line);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transition:border-color .3s,transform .3s,box-shadow .3s}
-.tool:hover{border-color:var(--line-hover);transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
-.tool dt{font-weight:700;color:#fff;font-family:var(--display);font-size:1.05rem;margin-bottom:6px}.tool dd{margin:0;color:var(--mut);font-size:.95rem;line-height:1.55}
-
-/* Contact Footer */
-.end{padding:130px 0 140px;text-align:center}
-.end h2{font-size:clamp(2.5rem,7.5vw,4.8rem);line-height:1.05;letter-spacing:-.03em;font-family:var(--display)}
-.end h2 em{font-style:italic;color:var(--gold)}
-.end p{color:var(--mut);max-width:32em;margin:16px auto 30px;font-size:1.1rem}
-.end .row{justify-content:center}
-
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
-.rv.on{opacity:1;transform:none}
-
-.toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);background:rgba(10,14,23,0.95);border:1px solid var(--line);color:#fff;padding:12px 24px;border-radius:99px;font-size:.95rem;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;z-index:90;max-width:calc(100vw - 32px);text-align:center;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 20px 40px rgba(0,0,0,0.5)}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-
-@media (max-width:900px){.hero-in.has-photo{grid-template-columns:1fr}.photo{max-width:260px}}
-@media (max-width:700px){
-.nav{top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:calc(100vw - 24px);justify-content:space-between}
-.nav a{flex:1;text-align:center;padding:11px 2px;font-size:.75rem}
-.nav .f{display:none}.nav .s{display:inline}
-.hero{padding:40px 0 90px}
-.jgrid{grid-template-columns:1fr;gap:12px}
-.big{font-size:4.5rem;display:inline-block;margin-left:12px;vertical-align:middle}
-.gh{display:flex;align-items:center}.group{margin:0}
-.p-on .stage{padding:30px 0 100px}
-.card{padding:20px}
-.nums{grid-template-columns:1fr 1fr;gap:14px}
-.num{padding:20px 16px}
-.node{width:38px;height:38px;font-size:.9rem}.track::before{left:19px;right:19px;top:19px}.fill{left:19px;top:19px;width:calc((100% - 38px)*var(--f,1))}
-.toast{bottom:100px}
-.end{padding:90px 0 140px}
-}
-.jgrid{grid-template-columns:3.5fr 8.5fr}
-.num b{font-size:clamp(2rem,3.8vw,3rem)}
-.lead{color:#cbd5e1;max-width:42em;margin-top:16px;font-size:clamp(1.05rem,1.9vw,1.2rem);line-height:1.6}
-.tag{font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.p-on .tag,.p-on .jhead{display:none}
-.jhead{margin-bottom:28px}
-.pin:not(.p-on) .gh,.pin:not(.p-on) .bar,.pin:not(.p-on) .dots{display:none}
-.pin:not(.p-on) .jgrid{grid-template-columns:1fr}
-@media (max-width:700px){.jgrid{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.cue{display:none}.cursor,.cursor-follower{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.row{clip-path:none}}
 </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
-<div class="aur" id="aur" data-s="a"><i></i><i></i><i></i></div>
-<div id="sp"></div>
-<nav class="nav" id="nav" aria-label="Sections">
-  <a href="#top"><span class="f">Overview</span><span class="s">Home</span></a>
-  <a href="#journey"><span class="f">Journey</span><span class="s">Journey</span></a>
-  <a href="#impact"><span class="f">Impact</span><span class="s">Impact</span></a>
-  <a href="#process"><span class="f">Process</span><span class="s">Process</span></a>
-  <a href="#approach"><span class="f">Approach</span><span class="s">Approach</span></a>
-  <a href="#contact" class="cta"><span class="f">Let’s talk</span><span class="s">Talk</span></a>
-</nav>
+<div id="prog"></div><div id="cur"></div>
+<a class="logo" href="#top" aria-label="Back to top">AC</a>
+<nav aria-label="Sections"><a href="#top">Home</a><a href="#journey">Journey</a><a href="#impact">Impact</a><a href="#process">Process</a><a href="#approach">Approach</a><a href="#contact" class="cta">Let’s talk</a></nav>
 <main>
-  <header class="hero" id="top"><div class="in">
-    <div class="hero-in" id="heroin">
-      <div>
-        <p class="label">SaaS Solutions Consultant</p>
-        <h1>Adrita<br><em>Chatterjee</em></h1>
-        <p class="pitch">I turn complex SaaS implementations into on-time, measurable outcomes for Fortune 500 finance teams.</p>
-        <div class="row"><a class="btn" href="#contact">Get in touch</a><a class="btn ghost" href="#journey">Follow the story</a></div>
-      </div>
-      <figure class="photo" id="photo" hidden><img alt="Portrait of Adrita Chatterjee"></figure>
-    </div>
-  </div><div class="cue">Scroll to follow the story</div></header>
+  <section class="scene" id="top" data-bg="paper" style="--len:190"><div class="stick"><div class="blob b1"></div><div class="blob b2"></div><div class="in">
+    <h1 class="name" aria-label="Adrita Chatterjee"><div aria-hidden="true">Adrita</div><div class="b" aria-hidden="true">Chatterjee</div></h1>
+    <p class="role">SaaS Solutions Consultant</p>
+  </div>
+  <svg class="badge" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="cp" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs><text><textPath href="#cp">SaaS Solutions Consultant / 3+ years / NA, EMEA, APAC /</textPath></text><circle cx="100" cy="100" r="30" fill="#2c3bff"/><path d="M100 86v28m-11-11 11 11 11-11" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div></section>
 
-  <section class="pin" id="journey" style="--len:460"><div class="stage"><div class="in">
-    <div class="jhead"><p class="label">Journey</p><h2>From campus to Fortune 500 projects</h2></div>
-    <div class="jgrid">
-      <div class="gh"><div><div class="group" id="grp">Education &amp; Leadership</div><div class="big" id="big">01</div></div></div>
-      <div><div class="cards" id="cards"></div>
-        <div class="bar"><i id="jbar"></i></div><div class="dots" id="jdots"></div></div>
-    </div>
+  <section class="scene" data-f="stm" data-bg="cob" style="--len:220"><div class="stick"><div class="in">
+    <p class="stm" id="stm"></p>
+    <p class="stm-sub">Three-plus years of enterprise rollouts across North America, EMEA and APAC.</p>
   </div></div></section>
 
-  <section class="pin" id="impact" style="--len:150"><div class="stage"><div class="in">
-    <p class="label">Impact</p><h2>What the work added up to</h2>
-    <p class="lead">Solution Architect with 3+ years in FinTech SaaS and Order to Cash, adept at building trusted relationships with stakeholders from analysts to CFOs across Fortune 500 accounts. Implemented $575K+ ARR projects and delivered 13+ global implementations (NA, EMEA, APAC), improving manual process automation by over 60%.</p>
-    <div class="nums" id="nums"></div>
-  </div></div></section>
-
-  <section class="pin" id="process" style="--len:260"><div class="stage"><div class="in">
-    <p class="label">Process</p><h2>How an implementation runs</h2>
-    <div class="track" id="track"><i class="fill" id="pfill"></i></div>
-    <div class="desc" id="desc"></div>
-  </div></div></section>
-
-  <section id="approach">
-    <div class="pin" style="--len:250"><div class="stage"><div class="in">
-      <p class="label">Approach</p><h2>How I work</h2>
-      <div class="word" id="word"></div>
-      <div class="bar"><i id="sbar"></i></div><div class="dots" id="sdots"></div>
-    </div></div></div>
-    <div class="tools"><div class="in">
-      <p class="label rv">Toolkit</p><h2 class="rv">What I build with</h2>
-      <div class="tgrid" id="tgrid"></div>
-    </div></div>
+  <section class="jw" id="journey" data-bg="paper">
+    <h2>From campus to Fortune 500 projects</h2><div id="stack"></div>
   </section>
 
-  <section class="end" id="contact"><div class="in">
-    <h2 class="rv">Let’s <em>work together.</em></h2>
-    <p class="rv">Let’s talk SaaS solution consulting, implementations and customer success.</p>
-    <div class="row rv"><a class="btn" href="mailto:chatterjeeadrita944@gmail.com">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/adritachatterjee30" target="_blank" rel="noopener">LinkedIn</a></div>
+  <section class="scene" id="impact" data-f="nums" data-bg="blush" style="--len:280"><div class="stick">
+    <p class="cap">What the work added up to</p><div class="grid" id="grid"></div>
   </div></section>
+
+  <section class="scene" id="process" data-f="pr" data-bg="mint" style="--len:320"><div class="stick"><div class="in pg">
+    <div class="ring"><svg viewBox="0 0 320 320" aria-hidden="true"><circle class="tr" cx="160" cy="160" r="140"/><circle class="fl" id="fl" cx="160" cy="160" r="140"/></svg><div><span id="pn">1</span><small>of 6 steps</small></div></div>
+    <div><h2 style="font:700 clamp(1.2rem,2.2vw,1.6rem)/1.2 var(--d);margin-bottom:10px">How an implementation runs</h2><ol class="sl" id="sl"></ol></div>
+  </div></div></section>
+
+  <section class="scene" id="approach" data-f="ap" data-bg="ink" style="--len:420"><div class="stick">
+    <p class="cap">How I work</p>
+    <div class="rw"><div class="col" id="col"></div></div>
+    <p class="dsc" id="dsc"></p><div class="cnt" id="cnt"></div>
+  </div></section>
+
+  <section class="tk" id="toolkit" data-bg="paper"><h2>What I build with</h2><div id="tgrid"></div></section>
+
+  <section class="scene ct" id="contact" data-f="ct" data-pin="0" data-bg="cob">
+    <div><h2 id="cth">Let’s talk.</h2>
+    <p>SaaS solution consulting, implementations and customer success.</p>
+    <div class="btns"><a class="btn" href="mailto:chatterjeeadrita944@gmail.com">Email me</a><a class="btn g" href="https://www.linkedin.com/in/adritachatterjee30" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="foot">© 2026 Adrita Chatterjee</div></div>
+  </section>
 </main>
-
 <script>
-(function(){
-var PHOTO="";
-var d=document,H=d.documentElement,$=function(s,r){return(r||d).querySelector(s)},$$=function(s,r){return Array.from((r||d).querySelectorAll(s))};
+(()=>{
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const rm=matchMedia("(prefers-reduced-motion:reduce)").matches,fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
+if(rm)document.documentElement.classList.add("rm");
+const K=rm?1:.1,esc=s=>s.replace(/&/g,"&amp;");
 
-// Automatic Mobile vs Desktop detection:
-// Scroll pinning is active on desktop (width >= 1024px) for the Senbuzy experience, 
-// and gracefully disabled on mobile (width < 1024px) to ensure zero lag, instant scrolling, and no clipping.
-var pinned = H.classList.contains("pinned") || innerWidth >= 1024;
-
-// Custom Cursor Logic (Desktop Only)
-if(innerWidth >= 1024){
-  var cursor=$("#cursor"),follower=$("#cursorFollower");
-  var mouseX=0,mouseY=0,cursorX=0,cursorY=0,followerX=0,followerY=0;
-  addEventListener("mousemove",function(e){
-    mouseX=e.clientX; mouseY=e.clientY;
-    var xPct=(mouseX/innerWidth-.5)*2, yPct=(mouseY/innerHeight-.5)*2;
-    document.documentElement.style.setProperty("--mx",xPct.toFixed(2));
-    document.documentElement.style.setProperty("--my",yPct.toFixed(2));
-  });
-  function loopCursor(){
-    cursorX+=(mouseX-cursorX)*.25; cursorY+=(mouseY-cursorY)*.25;
-    followerX+=(mouseX-followerX)*.15; followerY+=(mouseY-followerY)*.15;
-    cursor.style.transform=`translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
-    follower.style.transform=`translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(loopCursor);
-  }
-  requestAnimationFrame(loopCursor);
-}
-
-var CH=[
-{g:0,w:"2019 – 2023",t:"B.Tech, Computer Science & Communication Engineering",o:"KIIT",l:["Graduated with a 9.04 CGPA.","Four years of core CS and communication engineering."]},
-{g:0,w:"College years",t:"Executive, then Senior Executive, PCR Team",o:"KIIT Entrepreneurship Cell",l:["Built marketing and persuasion skills in the Public &amp; Corporate Relations team.","Led the team as Senior Executive.","Brought distinguished corporate speakers to KIIT for sessions and workshops."]},
-{g:0,w:"2022 – 23",t:"Chairperson",o:"KIIT Entrepreneurship Cell",l:["Led the entire E-Cell, starting with the management body: ED-HR, MD, COO and CMO.","Led the executive teams (Career Activity Centre, Entrepreneurship &amp; Student Connect, PCR, R&amp;D, Tech, Content and Design) and the advisory body."]},
-{g:1,w:"Aug 2022",t:"Intern",o:"HighRadius",l:["Joined live implementation projects from the first day.","Highako Award (2023): awarded for exceptional project performance and process improvements."],b:["Highako Award, 2023"]},
-{g:1,w:"Jul 2023 – Dec 2024",t:"Associate Consultant I",o:"HighRadius",l:["Built systems per design specifications, configured data field mappings, and performed agent-driven data analysis and loading for end-to-end deployments.","Built HTML/CSS email templates for clients.","HighFlyer (H1 2024): recognized for excellence in client delivery and automation initiatives.","SPOT Award (Q3 2024): recognized for consistent high performance and going above and beyond core responsibilities."],b:["HighFlyer, H1 2024","SPOT Award, Q3 2024"]},
-{g:1,w:"Jan 2025 – Jun 2026",t:"Consultant I",o:"HighRadius",l:["Configured the EIPP cloud platform and integrated it with payment processors (Chase Paymentech, WorldPay, TSYS, Stripe, Fiserv), banks (JPMC, Bank of America) and ERPs (SAP, NetSuite, Sage Intacct, Microsoft D365) through API and SFTP.","Partnered with Product and Engineering to launch a centralized invoice delivery and POD-tracking repository for a strategic enterprise client, successfully sunsetting their legacy platform for HighRadius.","Facilitated user journey demos, authored client test scripts, and led UAT, production cutovers, post-cutover dry runs and hypercare support for stable go-lives, delivering virtual and on-site training for enterprise billing teams.","Developed and executed SQL queries to extract, validate and reconcile large datasets, configure backend platforms and generate custom client reporting to drive data integrity.","Achieved CSAT scores of 4.5–5/5 across most implementations and Promoter-level NPS from clients.","Led 4+ consultants delivering EIPP cloud solutions, driving milestone adherence and proactive risk mitigation for executive leadership."]},
-{g:1,w:"Jul 2026 – Present",t:"Consultant II",o:"HighRadius",l:["Leading end-to-end implementation of the HighRadius EIPP (Electronic Invoice Payment &amp; Presentment) module with Fortune 500 clients across NA, EMEA and APAC.","Running discovery (AS-IS vs To-be) and design sessions with clients to map processes to platform capabilities, define requirements and validate data readiness before kickoff.","Conducting fit-gap analysis, negotiating workarounds for product limitations, partnering with Sales to re-align client scope, and escalating go-live blockers to Product.","Defining and quantifying success criteria, tracking key metrics to validate post-implementation ROI and business impact.","Maintaining strategic alignment with C-suite stakeholders (CFOs, CEOs) through recurring executive briefings to drive project milestones and account retention.","Training and mentoring 3 batches of interns and several lateral hires (7+ people) over three years."]}
+const STM="I turn complex SaaS implementations into on-time, measurable outcomes for Fortune 500 finance teams.";
+const CH=[
+{g:0,w:"2019 – 2023",t:"B.Tech, Computer Science & Communication Engineering",o:"KIIT",l:["Graduated with a 9.04 CGPA.","Four years of core computer science and communication engineering."]},
+{g:0,w:"College years",t:"Executive, then Senior Executive, PCR Team",o:"KIIT Entrepreneurship Cell",l:["Built marketing and persuasion skills in the Public & Corporate Relations team.","Led the team as Senior Executive and brought corporate speakers to campus."]},
+{g:0,w:"2022 – 23",t:"Chairperson",o:"KIIT Entrepreneurship Cell",l:["Led the entire E-Cell, from the management body (ED-HR, MD, COO, CMO) to the executive teams and the advisory body."]},
+{g:1,w:"Aug 2022",t:"Intern",o:"HighRadius",l:["Joined live implementation projects from the first day.","Highako Award (2023) for exceptional project performance and process improvements."],b:["Highako Award, 2023"]},
+{g:1,w:"Jul 2023 – Dec 2024",t:"Associate Consultant I",o:"HighRadius",l:["Built systems to design specs, configured data field mappings, and ran data analysis and loading for end-to-end deployments.","Built HTML/CSS email templates for clients."],b:["HighFlyer, H1 2024","SPOT Award, Q3 2024"]},
+{g:1,w:"Jan 2025 – Jun 2026",t:"Consultant I",o:"HighRadius",l:["Configured the EIPP cloud platform and integrated payment processors, banks and ERPs through API and SFTP.","Launched a centralized invoice delivery and POD-tracking repository, sunsetting a client’s legacy platform.","Led UAT, cutovers and hypercare, plus 4+ consultants. CSAT 4.5–5/5 with Promoter-level NPS."]},
+{g:1,now:1,w:"Jul 2026 – Present",t:"Consultant II",o:"HighRadius",l:["Leading end-to-end EIPP implementations with Fortune 500 clients across NA, EMEA and APAC.","Running discovery, fit-gap analysis and success criteria that validate post-implementation ROI.","Briefing C-suite stakeholders and mentoring 7+ interns and lateral hires over three years."]}
 ];
-var GR=["Education & Leadership","Experience"];
-var NUMS=[["13","+","","Global implementations across NA, EMEA and APAC"],["575","K+","$","ARR across implemented projects"],["60","%+","","Improvement in manual process automation"],["4.5–5/5","","","Client CSAT, with Promoter-level NPS"]];
-var ST=[["Discover","AS-IS and To-be sessions, and data readiness checked before kickoff."],["Design","Map processes to the platform, run fit-gap analysis and set success criteria."],["Configure","Build to spec and integrate payment processors, banks and ERPs."],["Validate","Test scripts, user journey demos and UAT."],["Go live","Production cutover, with dry runs for a stable launch."],["Support","Hypercare, training and ROI tracking after launch."]];
-var SW=[["Troubleshooting","Resolving issues fast in hypercare, and escalating go-live blockers to Product with clear workarounds."],["Accountability","Owning each implementation from kickoff to hypercare, reflected in 4.5–5/5 CSAT."],["Meticulousness","Validating data readiness before kickoff and reconciling large datasets with SQL."],["Adaptability","Delivering across NA, EMEA and APAC, with different ERPs, banks and processors."],["Triage","Separating what is critical from what can wait across UAT, cutover and hypercare."]];
-var TL=[["ERPs","SAP, NetSuite, Sage Intacct, Microsoft D365"],["Payments and banks","Chase Paymentech, WorldPay, TSYS, Stripe, Fiserv, JPMC, Bank of America"],["Identity and email","SSO integration with Azure AD and Okta; Amazon SES (SMTP / email relay)"],["Data and tools","SQL, API, Jira, Excel, HTML/CSS, SFTP configuration, AI productivity tools, ERP and payment gateway integrations"],["Professional expertise","Solution architecture, requirement gathering, stakeholder management, project management (Waterfall/Agile), customer success and churn mitigation, playbooks and documentation, process automation"]];
-var esc=function(s){return s.replace(/&/g,"&amp;")};
+const NUMS=[[13,"+","","Global implementations across NA, EMEA and APAC"],[575,"K+","$","ARR across implemented projects"],[60,"%+","","Improvement in manual process automation"],[0,"","","Client CSAT, with Promoter-level NPS"]];
+const ST=[["Discover","AS-IS and To-be sessions, and data readiness checked before kickoff."],["Design","Map processes to the platform, run fit-gap analysis and set success criteria."],["Configure","Build to spec and integrate payment processors, banks and ERPs."],["Validate","Test scripts, user journey demos and UAT."],["Go live","Production cutover, with dry runs for a stable launch."],["Support","Hypercare, training and ROI tracking after launch."]];
+const AW=[["Troubleshooting","Resolving issues fast in hypercare, and escalating go-live blockers to Product with clear workarounds."],["Accountability","Owning each implementation from kickoff to hypercare, reflected in 4.5–5/5 CSAT."],["Meticulousness","Validating data readiness before kickoff and reconciling large datasets with SQL."],["Adaptability","Delivering across NA, EMEA and APAC, with different ERPs, banks and processors."],["Triage","Separating what is critical from what can wait across UAT, cutover and hypercare."]];
+const TL=[["ERPs","SAP, NetSuite, Sage Intacct, Microsoft D365"],["Payments and banks","Chase Paymentech, WorldPay, TSYS, Stripe, Fiserv, JPMC, Bank of America"],["Identity and email","SSO with Azure AD and Okta, Amazon SES (SMTP / email relay)"],["Data and tools","SQL, API, Jira, Excel, HTML/CSS, SFTP, AI productivity tools, ERP and payment gateway integrations"],["Expertise","Solution architecture, requirement gathering, stakeholder management, project management (Waterfall/Agile), customer success and churn mitigation, playbooks and documentation, process automation"]];
 
-$("#cards").innerHTML=CH.map(function(c){return'<article class="card"><div class="tag">'+esc(GR[c.g])+'</div><div class="when">'+c.w+'</div><h3>'+esc(c.t)+'</h3><p class="org">'+c.o+'</p><ul>'+c.l.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>"+(c.b?'<div class="badges">'+c.b.map(function(x){return'<span class="badge">'+x+"</span>"}).join("")+"</div>":"")+"</article>"}).join("");
-$("#jdots").innerHTML=CH.map(function(c,i){return"<span>0"+(i+1)+"</span>"}).join("");
-$("#nums").innerHTML=NUMS.map(function(n){return'<div class="num"><b data-n="'+n[0]+'" data-s="'+n[1]+'" data-p="'+n[2]+'">'+n[2]+n[0]+n[1]+"</b><span>"+n[3]+"</span></div>"}).join("");
-$("#track").insertAdjacentHTML("beforeend",ST.map(function(s,i){return'<div class="node">'+(i+1)+"</div>"}).join(""));
-$("#desc").innerHTML=ST.map(function(s,i){return'<div class="sd"><div class="k">Step '+(i+1)+" of 6</div><h3>"+s[0]+"</h3><p>"+s[1]+"</p></div>"}).join("");
-$("#word").innerHTML=SW.map(function(s){return'<div class="sw2"><h3>'+s[0]+"</h3><p>"+s[1]+"</p></div>"}).join("");
-$("#sdots").innerHTML=SW.map(function(s){return"<span>"+s[0].slice(0,4)+"</span>"}).join("");
-$("#tgrid").innerHTML=TL.map(function(t){return'<dl class="tool rv" style="margin:0"><dt>'+esc(t[0])+"</dt><dd>"+t[1]+"</dd></dl>"}).join("");
-if(PHOTO){var f=$("#photo");$("img",f).src=PHOTO;f.hidden=false;$("#heroin").classList.add("has-photo")}
+/* build */
+const sm=$("#stm");sm.innerHTML=STM.split(" ").map(w=>`<span class="w">${w}</span>`).join(" ");const ws=$$(".w",sm);
+$("#stack").innerHTML=CH.map((c,i)=>`<article class="sc g${c.g}${c.now?" now":""}" style="--i:${i}"><div><div class="when">${c.w}</div><p class="org">${c.o}</p></div><div><h3>${esc(c.t)}</h3><ul>${c.l.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul>${c.b?`<div class="bd">${c.b.map(x=>"<span>"+x+"</span>").join("")}</div>`:""}</div></article>`).join("");
+const cards=$$(".sc");
+$("#grid").innerHTML=NUMS.map(n=>`<div class="t"><b></b><span>${n[3]}</span></div>`).join("");const ts=$$(".t"),tb=ts.map(t=>t.firstElementChild);
+const CIR=2*Math.PI*140,fl=$("#fl");fl.style.strokeDasharray=CIR;
+$("#sl").innerHTML=ST.map(s=>`<li><h3>${s[0]}</h3><div class="x"><p>${s[1]}</p></div></li>`).join("");const sls=$$("#sl li"),pn=$("#pn");
+$("#col").innerHTML=AW.map(a=>`<div class="it">${a[0]}</div>`).join("");const its=$$(".it"),dsc=$("#dsc"),cnt=$("#cnt"),colEl=$("#col");
+$("#tgrid").innerHTML=TL.map((t,i)=>`<div class="row" style="--i:${i}"><h3>${t[0]}</h3><div class="chips">${t[1].split(/, /).map(c=>`<span class="chip">${c}</span>`).join("")}</div></div>`).join("");
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in-v");o.unobserve(e.target)}}),{threshold:.1}).observe($("#tgrid"));
 
-var lk=d.createElement("link");lk.rel="stylesheet";lk.href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Space+Grotesk:wght@400;500;700&display=swap";d.head.appendChild(lk);
+/* scene motion */
+let lp=-1,la=-1,H0=60,stable=innerHeight;
+const F={
+ stm(p){const n=ws.length;ws.forEach((w,i)=>{const e=cl((p*1.25-.08)*n-i);w.style.opacity=(.22+.78*e).toFixed(3)})},
+ nums(p){const N=NUMS.length;ts.forEach((t,i)=>{const e=cl(p*N*1.05-i*.85),nm=NUMS[i],k=cl(e*3);t.style.setProperty("--e",e.toFixed(3));t.style.transform=`translateY(${((1-k)*60).toFixed(1)}px) rotate(${((1-k)*(i%2?3:-3)).toFixed(2)}deg)`;t.style.opacity=cl(e*6+.15).toFixed(2);
+  tb[i].textContent=i===3?"4.5–5/5":nm[2]+Math.round(nm[0]*e)+(e>.98?nm[1]:"")})},
+ pr(p){fl.style.strokeDashoffset=CIR*(1-p);const k=cl(Math.floor(p*6),0,5);if(k!==lp){lp=k;pn.textContent=k+1;sls.forEach((s,i)=>s.classList.toggle("on",i===k))}},
+ ap(p){const N=its.length,x=cl((p-.04)/.92)*(N-1);colEl.style.transform=`translateY(${(-(x+.5)*H0).toFixed(1)}px)`;
+  its.forEach((it,i)=>{const d=Math.abs(i-x);it.style.opacity=cl(1-d*.7).toFixed(3);it.style.fontVariationSettings=`"wdth" ${(55+70*cl(1-d)).toFixed(0)}`;it.style.color=d<.5?"#8de8c0":""});
+  const a=Math.round(x);if(a!==la){la=a;dsc.textContent=AW[a][1];cnt.textContent=(a+1)+" / "+N}},
+ ct(p){const e=cl(p/.5),h=$("#cth");h.style.transform=`scale(${(.62+.38*e).toFixed(3)})`;h.style.opacity=(.15+.85*e).toFixed(3)}
+};
+const sc=$$(".scene").map(el=>({el,f:F[el.dataset.f],p:-1,pin:el.dataset.pin!=="0",top:0,h:0}));
 
-var cl=function(v,a,b){return Math.max(a,Math.min(b,v))};
-function prog(el){var r=el.getBoundingClientRect(),L=r.height-innerHeight;return L>0?cl(-r.top/L,0,1):0}
-function setOn(list,i){list.forEach(function(e,k){e.classList.toggle("on",k===i)})}
-var P={j:$("#journey"),i:$("#impact"),p:$("#process"),a:$("#approach .pin")};
-var cardsEl=$("#cards"),descEl=$("#desc"),wordEl=$("#word");
-var cards=$$(".card"),big=$("#big"),grp=$("#grp"),jd=$$("#jdots span"),nums=$$(".num"),nodes=$$(".node"),sds=$$(".sd"),sws=$$(".sw2"),sd=$$("#sdots span");
-var last={j:-1,p:-1,s:-1},aur=$("#aur"),heroin=$("#heroin");
-function on(e){return e.classList.contains("p-on")}
-function scene(k){if(aur.dataset.s!==k)aur.dataset.s=k}
+/* background colour follows the section in view */
+const COL={paper:["#f4f3fb","#12112a"],cob:["#2c3bff","#f4f3fb"],blush:["#ffb8d9","#12112a"],mint:["#8de8c0","#12112a"],ink:["#12112a","#f4f3fb"]};
+const secs=$$("[data-bg]").map(el=>({el,bg:el.dataset.bg,top:0})),idl=["top","journey","impact","process","approach","contact"].map(id=>({el:$("#"+id),top:0})),links=$$("nav a"),jw=$(".jw"),prog=$("#prog");
+let cur=-1,cb="",jt=0,jh=0,run=false;
 
-function fit(){
-  pinned = H.classList.contains("pinned") || innerWidth >= 1024;
-  [P.j,P.i,P.p,P.a].forEach(function(e){e.classList.remove("p-on")});
-  if(pinned){
-    var mh=function(a){return Math.max.apply(null,a.map(function(e){return e.offsetHeight}))};
-    cardsEl.style.setProperty("--ch",(mh(cards)+28)+"px");descEl.style.setProperty("--dh",(mh(sds)+8)+"px");wordEl.style.setProperty("--wh",(mh(sws)+8)+"px");
-    [P.j,P.i,P.p,P.a].forEach(function(e){
-      e.classList.add("p-on");
-      var st=$(".stage",e),cs=getComputedStyle(st),need=$(".in",st).offsetHeight+parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom);
-      if(need>st.clientHeight)e.classList.remove("p-on");
-    });
-  }
-  if(!on(P.i))nums.forEach(function(n,i){var s=NUMS[i];$("b",n).textContent=s[2]+s[0]+s[1]});
-  if(!on(P.p)){nodes.forEach(function(n){n.classList.add("on")});$("#pfill").style.setProperty("--f",1)}
-  cards.forEach(function(c){c.classList.toggle("rv",!on(P.j))});
-  last.j=last.p=last.s=-1;
-}
+/* positions are measured once (and on resize), not on every frame */
+function measure(){const y=scrollY;stable=$(".stick").offsetHeight||innerHeight;
+ sc.forEach(s=>{const r=s.el.getBoundingClientRect();s.top=r.top+y;s.h=r.height});
+ secs.forEach(s=>s.top=s.el.getBoundingClientRect().top+y);idl.forEach(s=>s.top=s.el.getBoundingClientRect().top+y);
+ const r=jw.getBoundingClientRect();jt=r.top+y;jh=r.height;H0=its[0].offsetHeight||H0}
 
-function frame(){
-  var y=scrollY||H.scrollTop,tot=H.scrollHeight-innerHeight;
-  aur.style.setProperty("--p",(tot>0?y/tot:0).toFixed(4));
-  $("#sp").style.width=(tot>0?y/tot*100:0)+"%";
-  var jp=0,ji=0;
-  if(pinned){
-    var h=cl(y/innerHeight,0,1);heroin.style.opacity=1-h*1.1;heroin.style.transform="translateY("+(h*50)+"px) scale("+(1-h*.06)+")";
-    if(on(P.j)){
-      jp=prog(P.j);var N=CH.length;ji=cl(Math.floor(jp*N),0,N-1);
-      cards.forEach(function(c,i){var dd=jp*N-i,v=cl((.5-Math.abs(dd-.5))/.15,0,1);if(i===0&&jp*N<.5)v=1;if(i===N-1&&jp*N>N-.5)v=1;c.style.setProperty("--o",v.toFixed(3));c.style.setProperty("--y",((.5-dd)*70).toFixed(1)+"px");c.style.pointerEvents=v>.5?"auto":"none"});
-      $("#jbar").style.setProperty("--f",jp.toFixed(3));
-      if(ji!==last.j){last.j=ji;big.textContent="0"+(ji+1);big.classList.remove("sw");void big.offsetWidth;big.classList.add("sw");grp.textContent=GR[CH[ji].g];jd.forEach(function(s,k){s.classList.toggle("on",k===ji)})}
-    }else{jp=prog(P.j);ji=jp>0?(CH.length>3?(jp>.4?3:0):0):0}
-    if(on(P.i)){
-      var ip=prog(P.i);
-      nums.forEach(function(n,i){var e=cl((ip*1.6-i*.28)/.4,0,1),b=$("b",n),s=NUMS[i];n.style.setProperty("--o",e.toFixed(3));n.style.setProperty("--s",(.95+.05*e).toFixed(3));b.textContent=(i===3)?s[0]:s[2]+Math.round(parseFloat(s[0])*e)+(e>.99?s[1]:"")});
-    }
-    if(on(P.p)){
-      var pp=prog(P.p),pi=cl(Math.floor(pp*6),0,5);
-      $("#pfill").style.setProperty("--f",cl(pp*6/5,0,1).toFixed(3));
-      if(pi!==last.p){last.p=pi;nodes.forEach(function(n,k){n.classList.toggle("on",k<=pi);n.classList.toggle("cur",k===pi)});setOn(sds,pi)}
-    }
-    if(on(P.a)){
-      var sp=prog(P.a),si=cl(Math.floor(sp*5),0,4);
-      $("#sbar").style.setProperty("--f",sp.toFixed(3));
-      if(si!==last.s){last.s=si;setOn(sws,si);sd.forEach(function(s,k){s.classList.toggle("on",k===si)})}
-    }
-  }
-  var ar=$("#approach").getBoundingClientRect().top,jr=P.j.getBoundingClientRect();
-  var inJ=jr.top<=0&&jr.bottom>innerHeight*.5,late=on(P.j)?ji>=3:(-jr.top)/Math.max(1,jr.height)>.45;
-  scene(y<innerHeight*.6?"a":(ar<innerHeight*.5?"c":((jr.bottom<innerHeight*.5||(inJ&&late))?"b":"a")));
-  spy();
-}
+function tick(){run=false;const y=scrollY,vh=innerHeight;let busy=false;
+ sc.forEach(s=>{if(y+vh*1.3<s.top||y>s.top+s.h+vh*.3)return;
+  const t=s.pin?cl((y-s.top)/Math.max(1,s.h-stable)):cl((y+vh-s.top)/(vh+s.h));
+  if(s.p<0)s.p=t;s.p+=(t-s.p)*K;if(Math.abs(t-s.p)<.0006)s.p=t;else busy=true;
+  s.el.style.setProperty("--p",s.p.toFixed(4));s.f&&s.f(s.p)});
+ if(y+vh>jt&&y<jt+jh)cards.forEach((c,i)=>{const n=cards[i+1];if(!n)return;const q=cl(1-(n.getBoundingClientRect().top-c.getBoundingClientRect().top)/(vh*.8));c.style.transform=`scale(${(1-q*.06).toFixed(3)})`});
+ const tot=document.documentElement.scrollHeight-vh;prog.style.transform=`scaleY(${tot>0?y/tot:0})`;
+ let b="paper";secs.forEach(s=>{if(s.top<=y+vh*.5)b=s.bg});if(b!==cb){cb=b;document.body.style.setProperty("--bg",COL[b][0]);document.body.style.setProperty("--fg",COL[b][1])}
+ let k=0;idl.forEach((s,i)=>{if(s.top<=y+vh*.45)k=i});if(vh+y>=document.documentElement.scrollHeight-4)k=idl.length-1;
+ if(k!==cur){cur=k;links.forEach((a,i)=>a.classList.toggle("on",i===k))}
+ if(busy)kick()}
+function kick(){if(!run){run=true;requestAnimationFrame(tick)}}
+let rz;const re=()=>{clearTimeout(rz);rz=setTimeout(()=>{measure();kick()},120)};
+addEventListener("scroll",kick,{passive:true});addEventListener("resize",re);addEventListener("orientationchange",re);addEventListener("load",re);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(re);
+if(window.ResizeObserver)new ResizeObserver(re).observe(document.body);
+measure();kick();
 
-var nv=$("#nav"),as=$$("a",nv),ids=as.map(function(a){return a.getAttribute("href").slice(1)}),ind=d.createElement("i"),cur=-1,lock=-1,lt;
-ind.className="ind";nv.insertBefore(ind,nv.firstChild);
-function mv(){var a=as[cur];if(!a)return;ind.style.width=a.offsetWidth+"px";ind.style.transform="translateX("+a.offsetLeft+"px)"}
-function spy(){var yy=innerHeight*.4,k=0;ids.forEach(function(id,i){var e=d.getElementById(id);if(e&&e.getBoundingClientRect().top<=yy)k=i});
-  if(innerHeight+(scrollY||H.scrollTop)>=H.scrollHeight-4)k=ids.length-1;
-  if(lock>=0)k=lock;
-  if(k!==cur){cur=k;as.forEach(function(a,i){a.classList.toggle("on",i===k)});mv()}}
-as.forEach(function(a,i){a.addEventListener("click",function(){lock=i;clearTimeout(lt);spy();lt=setTimeout(function(){lock=-1;spy()},1600)})});
-var tk=0;function req(){if(!tk){tk=1;requestAnimationFrame(function(){tk=0;frame()})}}
-var rz;function refit(){clearTimeout(rz);rz=setTimeout(function(){fit();mv();req()},120)}
-addEventListener("scroll",req,{passive:true});addEventListener("resize",refit);addEventListener("orientationchange",refit);addEventListener("load",refit);
-if(d.fonts&&d.fonts.ready)d.fonts.ready.then(refit);
-fit();frame();
+/* cursor and hero parallax (mouse devices only, loop runs only while moving) */
+const cu=$("#cur"),hero=$("#top");
+if(fine){let mx=innerWidth/2,my=innerHeight/2,ax=mx,ay=my,cr=false;
+ const cl2=()=>{ax+=(mx-ax)*.3;ay+=(my-ay)*.3;cu.style.transform=`translate(${ax}px,${ay}px)`;if(Math.abs(mx-ax)+Math.abs(my-ay)>.3)requestAnimationFrame(cl2);else cr=false};
+ addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;hero.style.setProperty("--mx",((mx/innerWidth-.5)*2).toFixed(2));hero.style.setProperty("--my",((my/innerHeight-.5)*2).toFixed(2));if(!cr){cr=true;requestAnimationFrame(cl2)}},{passive:true});
+ addEventListener("pointerover",e=>cu.classList.toggle("big",!!e.target.closest("a,button,.chip,.row,.sc")))}else cu.remove();
 
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.12});
-$$(".rv").forEach(function(e){io.observe(e)});
-cards.forEach(function(c){io.observe(c)});
-if(!pinned){nodes.forEach(function(n){n.classList.add("on")});$$(".num b").forEach(function(b){b.textContent=b.dataset.p+b.dataset.n+b.dataset.s})}
-
-var tt=d.createElement("div"),tm;tt.className="toast";tt.setAttribute("role","status");d.body.appendChild(tt);
-$$('a[href^="mailto:"]').forEach(function(a){a.addEventListener("click",function(){var ad=a.getAttribute("href").slice(7);try{navigator.clipboard.writeText(ad).then(function(){tt.textContent="Email address copied: "+ad;tt.classList.add("show");clearTimeout(tm);tm=setTimeout(function(){tt.classList.remove("show")},2400)},function(){})}catch(x){}})});
+const tt=document.createElement("div");tt.className="toast";tt.setAttribute("role","status");document.body.appendChild(tt);let tm;
+$$('a[href^="mailto:"]').forEach(a=>a.addEventListener("click",()=>{const ad=a.getAttribute("href").slice(7);try{navigator.clipboard.writeText(ad).then(()=>{tt.textContent="Email address copied: "+ad;tt.classList.add("show");clearTimeout(tm);tm=setTimeout(()=>tt.classList.remove("show"),2400)},()=>{})}catch(x){}}));
 })();
 </script>
 </body>
