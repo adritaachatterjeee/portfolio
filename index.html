@@ -10,18 +10,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Special+Elite&family=DM+Sans:wght@400..700&display=swap" rel="stylesheet">
 <style>
-:root{--red:#c9202b;--grn:#2f6b4a;--blu:#2c3a8f;--ink:#1b1613;--paper:#f6efde;--mint:#a9d6c0;--ochre:#e3a53f;--rust:#b5523b;--slate:#5b7488;--d:"Abril Fatface",Georgia,serif;--a:"Archivo Black",system-ui,sans-serif;--t:"Special Elite","Courier New",monospace;--b:"DM Sans",system-ui,sans-serif;--air:repeating-linear-gradient(135deg,#c9202b 0 12px,#f6efde 12px 20px,#2f6b4a 20px 32px,#f6efde 32px 40px);box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%;background-color:#f7e4e4;background-image:repeating-linear-gradient(0deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),repeating-linear-gradient(90deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px)}
+:root{--red:#c9202b;--grn:#2f6b4a;--blu:#2c3a8f;--ink:#1b1613;--paper:#f6efde;--mint:#a9d6c0;--ochre:#e3a53f;--rust:#b5523b;--slate:#5b7488;--d:"Abril Fatface",Georgia,serif;--a:"Archivo Black",system-ui,sans-serif;--t:"Special Elite","Courier New",monospace;--b:"DM Sans",system-ui,sans-serif;--air:repeating-linear-gradient(135deg,#c9202b 0 12px,#f6efde 12px 20px,#2f6b4a 20px 32px,#f6efde 32px 40px);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{min-height:100%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%;background-color:#f7e4e4;background-image:repeating-linear-gradient(0deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),repeating-linear-gradient(90deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px)}
 html:not(.rm){scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:transparent;color:var(--ink);font:400 1.02rem/1.55 var(--b);overflow-x:clip;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;min-height:100%;background:transparent;color:var(--ink);font:400 1.02rem/1.55 var(--b);overflow-x:clip}
 h1,h2,h3,p,ul,ol{margin:0}ul,ol{padding:0;list-style:none}a{color:inherit}img,svg{max-width:100%}p,li,.addr a{overflow-wrap:anywhere}
 :focus-visible{outline:3px solid var(--blu);outline-offset:3px;border-radius:6px}
 .in{padding:0 7vw;width:100%}
 main{position:relative;z-index:2}
 
 /* gingham tablecloth (desktop intact, mobile seamless + GPU-friendly) */
-#cloth{position:fixed;inset:calc(-120px - env(safe-area-inset-top,0px)) 0 calc(-120px - env(safe-area-inset-bottom,0px));z-index:0;pointer-events:none;will-change:transform;background:repeating-linear-gradient(0deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),repeating-linear-gradient(90deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),#f7e4e4}
+#cloth{position:fixed;inset:-80px 0;z-index:0;pointer-events:none;will-change:transform;background:repeating-linear-gradient(0deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),repeating-linear-gradient(90deg,rgba(190,24,36,.66) 0 40px,transparent 40px 80px),#f7e4e4}
 #cloth::before{content:"";position:absolute;inset:-4%;opacity:.34;pointer-events:none;background:
       radial-gradient(ellipse 90px 34px at 8% 12%,rgba(31,54,31,.42) 0 38%,transparent 72%),
       radial-gradient(ellipse 110px 42px at 18% 19%,rgba(31,54,31,.34) 0 38%,transparent 72%),
@@ -31,7 +31,7 @@ main{position:relative;z-index:2}
       linear-gradient(72deg,transparent 0 88%,rgba(31,45,29,.18) 88.2% 88.8%,transparent 89% 100%);
       filter:blur(13px);transform:rotate(-4deg) scale(1.08)}
 #cloth::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.12) 0 1px,transparent 1px 3px),repeating-linear-gradient(-45deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px)}
-body::before{content:"";position:fixed;inset:calc(-120px - env(safe-area-inset-top,0px)) 0 calc(-120px - env(safe-area-inset-bottom,0px));z-index:1;pointer-events:none;background:radial-gradient(ellipse at 65% 25%,transparent 35%,rgba(70,0,12,.28))}
+body::before{content:"";position:fixed;inset:-140px 0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 65% 25%,transparent 35%,rgba(70,0,12,.28))}
 
 #prog{position:fixed;left:0;top:0;right:0;height:8px;z-index:60;background:var(--air);transform-origin:0 50%;transform:scaleX(var(--q,0));will-change:transform}
 .logo{position:fixed;left:20px;top:calc(18px + env(safe-area-inset-top,0px));z-index:50;font:400 1.3rem/1 var(--d);text-decoration:none;background:var(--paper);padding:8px 12px;border:2px dashed var(--ink);box-shadow:0 6px 12px -6px rgba(0,0,0,.4);rotate:-3deg}
@@ -177,15 +177,15 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
 
 @media (max-width:860px){.ist{grid-template-columns:1fr 1fr}.cpc .pi{grid-template-columns:1fr}.addr{border-left:0;padding-left:0}}
 @media (max-width:760px){
-  /* Mobile-only gingham performance & seamless safe-area fix */
-  #cloth{inset:calc(-120px - env(safe-area-inset-top,0px)) calc(-24px - env(safe-area-inset-left,0px)) calc(-120px - env(safe-area-inset-bottom,0px)) calc(-24px - env(safe-area-inset-right,0px));will-change:auto;transform:none!important}
+  html{overflow-x:clip}
+  body{overflow-x:visible}
+  #cloth{inset:-140px -20px;will-change:auto;transform:none!important}
   #cloth::before{filter:none;opacity:.22;background:
     radial-gradient(ellipse 120px 48px at 8% 12%,rgba(31,54,31,.32) 0%,transparent 75%),
     radial-gradient(ellipse 140px 56px at 18% 19%,rgba(31,54,31,.26) 0%,transparent 75%),
     radial-gradient(ellipse 130px 52px at 82% 8%,rgba(31,54,31,.28) 0%,transparent 75%),
     radial-gradient(ellipse 150px 58px at 92% 18%,rgba(31,54,31,.26) 0%,transparent 75%)}
   #cloth::after{display:none}
-  body::before{inset:calc(-120px - env(safe-area-inset-top,0px)) 0 calc(-120px - env(safe-area-inset-bottom,0px)) 0}
   .stamp{background:#f7f0df;border:3px dotted #d7cbb4;box-shadow:0 12px 16px -6px rgba(40,10,10,.3);filter:none}
   .stamp::before{display:none}
   .ps{mix-blend-mode:normal}
