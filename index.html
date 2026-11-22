@@ -33,28 +33,6 @@ main{position:relative;z-index:2}
     #cloth::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.12) 0 1px,transparent 1px 3px),repeating-linear-gradient(-45deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px)}
 body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 65% 25%,transparent 35%,rgba(70,0,12,.28))}
 
-/* drifting branch & leaf shadows over cloth */
-#cloth-shadows{position:fixed;inset:-8%;z-index:1;pointer-events:none;overflow:hidden}
-.bshadow{position:absolute;filter:blur(9px);will-change:transform,opacity;mix-blend-mode:multiply}
-.bshadow--a{left:-6%;top:-4%;width:min(58vw,640px);height:auto;opacity:.14;transform-origin:12% 10%;animation:branchDriftA 22s ease-in-out infinite}
-.bshadow--b{right:-8%;top:10%;width:min(52vw,580px);height:auto;opacity:.12;transform-origin:88% 18%;animation:branchDriftB 26s ease-in-out infinite}
-.bshadow--c{left:14%;bottom:-8%;width:min(56vw,620px);height:auto;opacity:.11;transform-origin:35% 85%;animation:branchDriftC 28s ease-in-out infinite}
-@keyframes branchDriftA{
-  0%,100%{transform:translate3d(0,0,0) rotate(-1.5deg) scale(1);opacity:.12}
-  35%{transform:translate3d(2.4vw,1.8vh,0) rotate(1.8deg) scale(1.02);opacity:.17}
-  70%{transform:translate3d(-1.4vw,2.6vh,0) rotate(-.8deg) scale(.99);opacity:.11}
-}
-@keyframes branchDriftB{
-  0%,100%{transform:translate3d(0,0,0) rotate(1.2deg) scale(1);opacity:.11}
-  40%{transform:translate3d(-2.6vw,2.1vh,0) rotate(-2deg) scale(1.025);opacity:.16}
-  75%{transform:translate3d(1.2vw,-1.4vh,0) rotate(.6deg) scale(.99);opacity:.1}
-}
-@keyframes branchDriftC{
-  0%,100%{transform:translate3d(0,0,0) rotate(.8deg) scale(1);opacity:.1}
-  45%{transform:translate3d(2vw,-2.2vh,0) rotate(-1.6deg) scale(1.02);opacity:.15}
-  80%{transform:translate3d(-1.8vw,-1vh,0) rotate(1.4deg) scale(.99);opacity:.09}
-}
-
 #prog{position:fixed;left:0;top:0;right:0;height:8px;z-index:60;background:var(--air);clip-path:inset(0 calc(100% - var(--q,0)*100%) 0 0)}
 .logo{position:fixed;left:20px;top:calc(18px + env(safe-area-inset-top,0px));z-index:50;font:400 1.3rem/1 var(--d);text-decoration:none;background:var(--paper);padding:8px 12px;border:2px dashed var(--ink);box-shadow:0 6px 12px -6px rgba(0,0,0,.4);rotate:-3deg}
 nav{position:fixed;top:calc(18px + env(safe-area-inset-top,0px));right:20px;z-index:50;display:flex;gap:2px;padding:5px;border-radius:99px;background:var(--paper);box-shadow:0 8px 20px -8px rgba(40,0,10,.5);max-width:calc(100vw - 110px);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
@@ -100,7 +78,7 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
     .bf{transform-origin:50% 50%;animation:butterflyFlight 13s ease-in-out infinite}
     .bf .wing{transform-box:fill-box;transform-origin:100% 50%;animation:wingFlap .22s ease-in-out infinite}
     .bf .wing.right{transform-origin:0% 50%}
-    @media (prefers-reduced-motion:reduce){.bf,.fall-leaf,.bshadow{animation:none!important}.fall-leaf,.bshadow{display:none}}
+    @media (prefers-reduced-motion:reduce){.bf,.fall-leaf{animation:none!important}.fall-leaf{display:none}}
 .dropin .rl{animation:drop .55s cubic-bezier(.2,.9,.3,1.2) backwards}
 .cap{display:inline-block;margin-top:14px;padding:6px 14px;background:var(--paper);font:400 clamp(.95rem,1.8vw,1.2rem)/1.3 var(--t);rotate:-1.2deg;box-shadow:0 8px 14px -8px rgba(40,0,10,.5)}
 .ttl{position:absolute;left:7vw;right:7vw;top:calc(92px + env(safe-area-inset-top,0px));z-index:3}
@@ -214,7 +192,6 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
   #psvg{max-height:27svh}
   .pw{padding-top:112px}
   .bf{width:clamp(42px,9vw,58px);right:18vw;top:12vh}
-  .bshadow--a{width:84vw}.bshadow--b{width:78vw}.bshadow--c{width:82vw}
 
  nav{top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));left:10px;right:10px;max-width:none;justify-content:space-between}
  nav a{flex:1;text-align:center;padding:10px 2px;font-size:.72rem}nav a.cta{margin:0}
@@ -252,40 +229,7 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
 </style>
 </head>
 <body>
-<div id="cloth"></div>
-<div id="cloth-shadows" aria-hidden="true">
-  <svg class="bshadow bshadow--a" viewBox="0 0 640 420" fill="none">
-    <path d="M-20 26 C120 74, 245 135, 395 235 C475 288, 550 342, 625 395" stroke="rgba(34,46,32,.55)" stroke-width="7" stroke-linecap="round"/>
-    <path d="M165 92 C215 62, 268 48, 325 42" stroke="rgba(34,46,32,.45)" stroke-width="4.5" stroke-linecap="round"/>
-    <path d="M295 168 C350 132, 405 112, 468 104" stroke="rgba(34,46,32,.45)" stroke-width="4.5" stroke-linecap="round"/>
-    <path d="M235 128 C255 185, 285 232, 330 274" stroke="rgba(34,46,32,.42)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M130 78 C105 32, 138 4, 175 28 C192 40, 175 74, 130 78 Z" fill="rgba(28,42,26,.5)"/>
-    <path d="M210 64 C205 18, 245 2, 272 34 C284 48, 255 72, 210 64 Z" fill="rgba(28,42,26,.46)"/>
-    <path d="M318 44 C338 8, 382 12, 392 48 C396 64, 358 72, 318 44 Z" fill="rgba(28,42,26,.44)"/>
-    <path d="M355 132 C382 92, 426 92, 438 128 C442 144, 402 154, 355 132 Z" fill="rgba(28,42,26,.48)"/>
-    <path d="M445 108 C482 78, 524 92, 524 128 C524 144, 484 146, 445 108 Z" fill="rgba(28,42,26,.42)"/>
-    <path d="M276 205 C235 202, 215 238, 242 264 C256 276, 284 252, 276 205 Z" fill="rgba(28,42,26,.45)"/>
-    <path d="M420 252 C458 225, 496 244, 490 278 C486 294, 448 288, 420 252 Z" fill="rgba(28,42,26,.44)"/>
-  </svg>
-  <svg class="bshadow bshadow--b" viewBox="0 0 580 460" fill="none">
-    <path d="M600 45 C460 115, 340 190, 215 295 C140 358, 72 412, 12 452" stroke="rgba(34,46,32,.52)" stroke-width="6.5" stroke-linecap="round"/>
-    <path d="M415 132 C360 98, 305 82, 245 76" stroke="rgba(34,46,32,.42)" stroke-width="4.2" stroke-linecap="round"/>
-    <path d="M295 224 C238 205, 185 205, 128 218" stroke="rgba(34,46,32,.4)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M368 112 C345 64, 382 34, 418 58 C434 68, 414 104, 368 112 Z" fill="rgba(28,42,26,.46)"/>
-    <path d="M256 80 C228 42, 265 16, 298 44 C312 56, 290 86, 256 80 Z" fill="rgba(28,42,26,.44)"/>
-    <path d="M210 210 C175 174, 134 188, 136 224 C138 240, 178 238, 210 210 Z" fill="rgba(28,42,26,.45)"/>
-    <path d="M168 332 C126 322, 102 356, 126 384 C138 398, 168 376, 168 332 Z" fill="rgba(28,42,26,.42)"/>
-  </svg>
-  <svg class="bshadow bshadow--c" viewBox="0 0 620 380" fill="none">
-    <path d="M20 355 C155 280, 285 205, 435 125 C505 88, 562 56, 610 28" stroke="rgba(34,46,32,.5)" stroke-width="6" stroke-linecap="round"/>
-    <path d="M225 238 C205 185, 222 135, 255 92" stroke="rgba(34,46,32,.4)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M355 168 C395 186, 442 188, 492 176" stroke="rgba(34,46,32,.4)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M235 126 C195 104, 208 64, 245 72 C262 76, 256 112, 235 126 Z" fill="rgba(28,42,26,.44)"/>
-    <path d="M442 178 C478 156, 514 176, 504 210 C498 224, 464 214, 442 178 Z" fill="rgba(28,42,26,.43)"/>
-    <path d="M155 278 C118 264, 98 296, 122 322 C134 334, 160 314, 155 278 Z" fill="rgba(28,42,26,.4)"/>
-  </svg>
-</div>
-<div id="nature-layer" aria-hidden="true"></div><div id="prog"></div><div id="cur"></div>
+<div id="cloth"></div><div id="nature-layer" aria-hidden="true"></div><div id="prog"></div><div id="cur"></div>
 <a class="logo" href="#top" aria-label="Back to top">AC</a>
 <nav aria-label="Sections"><a href="#top">Home</a><a href="#journey">Journey</a><a href="#impact">Impact</a><a href="#process">Process</a><a href="#approach">Approach</a><a href="#contact" class="cta">Let’s talk</a></nav>
 <main>
