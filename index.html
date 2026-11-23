@@ -258,8 +258,13 @@ body::after{content:"";position:fixed;inset:0;z-index:4;pointer-events:none;back
 @media (max-width:760px){
   /* Keep the same natural light-absorbing canopy shadow as desktop.
      Normal blending and the lavender overlay previously made it look grey. */
-  #shade{background:transparent;mix-blend-mode:multiply}
-  #shade .sh.a{opacity:.48;filter:blur(2.5px)}
+  /* On phones, keep canopy shade on the picnic cloth, never across cards or lettering. */
+  #shade{z-index:1;background:transparent;mix-blend-mode:multiply;isolation:isolate}
+  #shade .sh.a{opacity:.32;filter:blur(5px)}
+  #shade .sh.b{display:none}
+  #nature-layer{z-index:1}
+  main{position:relative;z-index:2}
+  .logo,nav{z-index:50}
 }
 </style>
 </head>
@@ -387,9 +392,17 @@ if(nature&&!rm){
  /* branches spread around the whole frame and reaching well inside, so most of the cloth sits in leafy shade with sun showing through the gaps */
  const gen=(n,sd,L0,L1,l0,l1)=>Array.from({length:n},(_,i)=>{const t=(i+.5)/n+rnd(sd+i)*.02,e=t*4,k=Math.floor(e)%4,f=e-Math.floor(e);let x,y;if(k===0){x=f;y=-.05}else if(k===1){x=1.05;y=f}else if(k===2){x=1-f;y=1.05}else{x=-.05;y=1-f}
   return[x,y,Math.atan2(.5-y,.5-x)+rnd(sd+i+30)*.5,l0+(rnd(sd+i+60)+1)/2*(l1-l0),rnd(sd+i+90)*.4,L0+(rnd(sd+i+120)+1)/2*(L1-L0),i*1.9]});
- const A=mkL(cvA,mob?.4:.6,mob?"rgb(64,70,46)":"rgb(112,110,146)",gen(mob?5:13,3,56,74,480,720),1);
+ const mobileCanopy=[
+   /* top-right canopy: smaller overlapping foliage, leaving the centre open */
+   [1.10,-.07,2.32,300,-.12,42,0],
+   [.96,.13,2.65,250,.08,37,1.8],
+   [1.08,.48,3.04,220,.08,34,3.4],
+   /* small, diffuse side accents */
+   [-.10,.66,-.32,180,.06,31,4.8]
+  ];
+  const A=mkL(cvA,mob?.8:.6,mob?"rgb(88,77,56)":"rgb(112,110,146)",mob?mobileCanopy:gen(13,3,56,74,480,720),1);
  const B=mob?null:mkL(cvB,.45,"rgb(126,124,160)",gen(5,41,84,108,560,760),2);
- function size(){[A,B].forEach(l=>{if(!l)return;l.cv.width=Math.max(2,innerWidth*l.sc|0);l.cv.height=Math.max(2,innerHeight*l.sc|0);l.uu=Math.min(1.15,Math.max(.55,innerWidth/1400))*l.sc})}
+ function size(){[A,B].forEach(l=>{if(!l)return;l.cv.width=Math.max(2,innerWidth*l.sc|0);l.cv.height=Math.max(2,innerHeight*l.sc|0);l.uu=mob?l.sc:Math.min(1.15,Math.max(.55,innerWidth/1400))*l.sc})}
  function leaf(g,x,y,a,L){g.save();g.translate(x,y);g.rotate(a);const w=L*.42;g.beginPath();g.moveTo(0,0);g.bezierCurveTo(L*.25,-w,L*.72,-w*.9,L,0);g.bezierCurveTo(L*.72,w*.9,L*.25,w,0,0);g.fill();g.restore()}
  function draw(l,t){const{g,cv,uu}=l;g.clearRect(0,0,cv.width,cv.height);g.fillStyle=g.strokeStyle=l.fill;g.lineCap="round";
   l.br.forEach(b=>{const wv=wind(t+b.ph),th=.07*wv,len=b.len*uu,st=14*uu,n=Math.floor(len/st),pts=[];let x=b.ax*cv.width,y=b.ay*cv.height;
