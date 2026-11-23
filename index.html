@@ -21,32 +21,9 @@ h1,h2,h3,p,ul,ol{margin:0}ul,ol{padding:0;list-style:none}a{color:inherit}img,sv
 main{position:relative;z-index:2}
 
 /* Woven picnic gingham cloth + soft dappled foliage shadows */
-#cloth{position:fixed;top:-160px;right:-40px;bottom:-160px;left:-40px;z-index:0;pointer-events:none;will-change:transform;background:
-  repeating-linear-gradient(0deg,
-    rgba(168,22,30,.58) 0 18px,
-    rgba(196,34,44,.44) 18px 36px,
-    rgba(252,244,244,.52) 36px 54px,
-    rgba(238,224,224,.42) 54px 72px),
-  repeating-linear-gradient(90deg,
-    rgba(168,22,30,.58) 0 18px,
-    rgba(196,34,44,.44) 18px 36px,
-    rgba(252,244,244,.52) 36px 54px,
-    rgba(238,224,224,.42) 54px 72px),
-  #f4e0e0}
-#cloth::before{content:"";position:absolute;inset:-6%;opacity:.46;pointer-events:none;background:
-  radial-gradient(ellipse 140px 58px at 14% 18%,rgba(24,36,20,.44) 0%,rgba(24,36,20,.16) 48%,transparent 75%),
-  radial-gradient(ellipse 180px 72px at 24% 28%,rgba(24,36,20,.34) 0%,rgba(24,36,20,.1) 52%,transparent 76%),
-  radial-gradient(ellipse 160px 64px at 78% 14%,rgba(24,36,20,.4) 0%,rgba(24,36,20,.14) 50%,transparent 75%),
-  radial-gradient(ellipse 195px 78px at 88% 26%,rgba(24,36,20,.32) 0%,rgba(24,36,20,.1) 52%,transparent 76%),
-  radial-gradient(ellipse 150px 62px at 72% 78%,rgba(24,36,20,.28) 0%,transparent 74%),
-  linear-gradient(112deg,transparent 0 16%,rgba(22,32,18,.18) 16.4% 17.1%,transparent 17.6% 100%),
-  linear-gradient(68deg,transparent 0 82%,rgba(22,32,18,.16) 82.4% 83%,transparent 83.5% 100%);
-  filter:blur(15px);transform:rotate(-3deg) scale(1.06)}
-#cloth::after{content:"";position:absolute;inset:0;opacity:.75;background:
-  repeating-linear-gradient(0deg,rgba(255,255,255,.11) 0 1px,rgba(35,5,8,.06) 1px 2px,transparent 2px 3px),
-  repeating-linear-gradient(90deg,rgba(255,255,255,.09) 0 1px,rgba(35,5,8,.05) 1px 2px,transparent 2px 3px)}
-body::before{content:"";position:fixed;top:-160px;right:0;bottom:-160px;left:0;z-index:1;pointer-events:none;background:
-  radial-gradient(ellipse 80% 70% at 52% 40%,transparent 42%,rgba(45,6,10,.28) 100%)}
+#cloth{position:fixed;top:-160px;right:-40px;bottom:-160px;left:-40px;z-index:0;pointer-events:none;will-change:transform;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect width='72' height='72' fill='%23fbf1f1'/%3E%3Crect width='36' height='36' fill='%23cc1426'/%3E%3Crect x='36' width='36' height='36' fill='%23eeb3b9'/%3E%3Crect y='36' width='36' height='36' fill='%23eeb3b9'/%3E%3C/svg%3E") 0 0/72px 72px}
+#cloth::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.2) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(255,255,255,.16) 0 1px,transparent 1px 3px)}
+body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 90% 80% at 50% 45%,transparent 60%,rgba(40,30,40,.07) 100%)}
 
 #prog{position:fixed;left:0;top:0;right:0;height:8px;z-index:60;background:var(--air);transform-origin:0 50%;transform:scaleX(var(--q,0));will-change:transform}
 .logo{position:fixed;left:20px;top:calc(18px + env(safe-area-inset-top,0px));z-index:50;font:400 1.3rem/1 var(--d);text-decoration:none;background:var(--paper);padding:8px 12px;border:2px dashed var(--ink);box-shadow:0 6px 12px -6px rgba(0,0,0,.4);rotate:-3deg}
@@ -92,7 +69,7 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
   box-shadow:1px 5px 7px rgba(20,16,12,.22);will-change:transform,opacity;animation:leafFall var(--duration) linear var(--delay) infinite}
 .fall-leaf::after{content:"";position:absolute;left:10%;top:50%;width:80%;height:1px;background:rgba(235,225,175,.42);transform:rotate(-14deg);transform-origin:left}
 .bf{transform-origin:50% 50%;will-change:transform;animation:butterflyFlight 16s ease-in-out infinite;opacity:.82}
-.bf .wing{transform-box:fill-box;transform-origin:100% 50%;animation:wingFlap .28s ease-in-out infinite}
+.bf .wing{transform-box:fill-box;transform-origin:100% 50%;animation:wingFlap .45s ease-in-out infinite}
 .bf .wing.right{transform-origin:0% 50%}
 @media (prefers-reduced-motion:reduce){.bf,.fall-leaf{animation:none!important}.fall-leaf{display:none}}
 .dropin .rl{animation:drop .55s cubic-bezier(.2,.9,.3,1.2) backwards}
@@ -128,20 +105,8 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
 .ps text{font:700 11px var(--b);fill:var(--blu);letter-spacing:.08em}
 .dec{position:absolute;pointer-events:none;transform:translate3d(0,calc(var(--p,0)*var(--k)*-1vh),0);will-change:transform}
 
-/* Top-down iced coffee on a woven coaster with soft shadow */
-.cof{right:22vw;bottom:calc(9vh + 76px);width:clamp(104px,12vw,156px);aspect-ratio:1;--k:50;border-radius:50%;box-shadow:10px 18px 24px -6px rgba(24,8,10,.36)}
-.cof i{position:absolute;border-radius:50%}
-.co{inset:0;background:repeating-radial-gradient(circle,#b8925e 0 2px,#9e7846 2px 4px);box-shadow:inset 0 1px 2px rgba(255,245,225,.45)}
-.gl{inset:14%;background:radial-gradient(circle at 38% 34%,#c8a27a 0%,#986d45 55%,#634022 100%);box-shadow:inset 0 3px 8px rgba(22,10,4,.48),0 0 0 3px rgba(248,252,255,.32)}
-.ic{width:23%;height:23%;border-radius:22%!important;background:rgba(244,250,255,.42);border:1px solid rgba(255,255,255,.55);box-shadow:2px 4px 5px rgba(20,9,4,.28)}
-.i1{left:29%;top:29%;transform:rotate(18deg)}
-.i2{left:47%;top:46%;transform:rotate(-14deg)}
-
-/* Top-down mint camera with soft ground shadow */
-.cam{right:5vw;bottom:calc(6vh + 70px);width:clamp(112px,16vw,224px);--k:22;rotate:12deg;filter:drop-shadow(10px 18px 18px rgba(24,8,10,.34))}
-
 /* Small top-down butterfly */
-.bf{right:32vw;top:12vh;width:clamp(38px,4.2vw,56px);--k:70;rotate:calc(var(--p,0)*60deg - 16deg);filter:drop-shadow(4px 10px 8px rgba(24,8,10,.28))}
+.bf{right:32vw;top:12vh;width:clamp(56px,6vw,88px);--k:70;rotate:calc(var(--p,0)*60deg - 16deg);filter:drop-shadow(4px 10px 8px rgba(24,8,10,.28))}
 
 .cue{position:absolute;left:7vw;bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--paper);padding:4px 12px;font:400 .85rem var(--t);opacity:calc(1 - var(--p,0)*6)}
 
@@ -206,7 +171,6 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
 @media (max-width:860px){.ist{grid-template-columns:1fr 1fr}.cpc .pi{grid-template-columns:1fr}.addr{border-left:0;padding-left:0}}
 @media (max-width:760px){
   #cloth{will-change:auto;transform:none!important}
-  #cloth::before{filter:none;opacity:.24}
   #cloth::after{display:none}
   .stamp{background:#f7f0df;border:3px dotted #d7cbb4;box-shadow:0 12px 16px -6px rgba(40,10,10,.3);filter:none}
   .stamp::before{display:none}
@@ -225,11 +189,11 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
   .btn{padding:12px 18px}
   #psvg{max-height:27svh}
   .pw{padding-top:112px}
-  .bf{width:clamp(36px,7.5vw,48px);right:18vw;top:12vh}
+  .bf{width:clamp(48px,12vw,64px);right:18vw;top:12vh}
 
   nav{top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));left:10px;right:10px;max-width:none;justify-content:space-between}
   nav a{flex:1;text-align:center;padding:10px 2px;font-size:.72rem}nav a.cta{margin:0}
-  .hero .name{--fs:clamp(1.9rem,9.2vw,3.2rem)}.cof{display:none}.cam{width:92px;bottom:96px;right:3vw}.bf{right:18vw;top:11vh}
+  .hero .name{--fs:clamp(1.9rem,9.2vw,3.2rem)}.bf{right:18vw;top:11vh}
   .ps{width:84px;top:-30px}.hrow{margin-top:3vh}.cue{display:none}
   .adsc{bottom:96px}.cnt{bottom:100px;right:5vw}.jhud{bottom:90px}.toast{bottom:150px}
 }
@@ -260,28 +224,90 @@ nav a.cta{background:var(--red);color:#fff;margin-left:4px}
   .jtrack{padding-left:6vw;padding-right:6vw}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+/* ---------- picnic realism: dappled tree shade, props on the cloth, grass, paper grain ---------- */
+:root{--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .15 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+.pi,.cap,.tc{background-image:var(--grain)}.stb{background:#fbf6e8 var(--grain)}
+body::after{content:"";position:fixed;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 0% 0%,rgba(255,240,190,.14),transparent 70%)}
+#shade{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden;mix-blend-mode:multiply}
+.sh{position:absolute;inset:-22%;background-repeat:repeat;will-change:transform}
+.sh.a{background-size:1024px;opacity:.75;animation:shA 34s ease-in-out infinite alternate}
+.sh.b{background-size:1400px;opacity:.6;animation:shB 23s ease-in-out infinite alternate}
+@keyframes shA{from{transform:translate3d(-34px,-24px,0) rotate(-.6deg)}to{transform:translate3d(44px,30px,0) rotate(.9deg)}}
+@keyframes shB{from{transform:translate3d(30px,34px,0) rotate(.5deg)}to{transform:translate3d(-40px,-28px,0) rotate(-.8deg)}}
+.fall-leaf:nth-child(3n){background:linear-gradient(145deg,#b3a24c,#7b7a33 70%,#4c5a28)}
+.fall-leaf:nth-child(4n+1){background:linear-gradient(145deg,#b9823a,#8a5a26 70%,#5a3a1a)}
+#props{position:fixed;inset:0;z-index:1;pointer-events:none;--pf:0}
+.pp{position:absolute;will-change:transform,opacity}.pp svg{display:block;width:100%;height:auto;overflow:visible}
+.pp-cam{right:2vw;bottom:calc(3vh + 8px);width:clamp(160px,20vw,300px);transform:translate3d(calc(var(--pf)*7vw),calc(var(--pf)*10vh),0) rotate(calc(10deg + var(--pf)*14deg));opacity:calc(1 - var(--pf)*.45)}
+.pp-cof{right:21vw;bottom:calc(5vh + 6px);width:clamp(84px,9.5vw,150px);transform:translate3d(calc(var(--pf)*4vw),calc(var(--pf)*16vh),0);opacity:calc(1 - var(--pf)*.5)}
+#grass{position:fixed;left:0;right:0;bottom:0;height:0;z-index:3;pointer-events:none}
+#grass svg{position:absolute;bottom:-6px;width:clamp(120px,15vw,240px);height:auto;transform-origin:50% 100%;animation:sway 6s ease-in-out infinite alternate}
+#grass .l{left:-10px}#grass .r{right:-10px;scale:-1 1;animation-delay:-3s}
+@keyframes sway{to{transform:skewX(2.4deg)}}
+@media (max-width:760px){
+ .sh.b,#grass{display:none}.sh.a{background-size:640px;animation-duration:46s;opacity:.7}#shade{mix-blend-mode:normal}
+ .pp-cam{right:-8vw;bottom:92px;width:150px}.pp-cof{right:26vw;bottom:96px;width:72px}
+}
+
+/* live leaf shadows (canvas) */
+#shade .sh{inset:0;width:100%;height:100%;background:none;animation:none!important;will-change:auto}
+#shade{background:rgba(124,122,156,.12)}
+#shade .sh.a{opacity:.76;filter:blur(2px)}
+#shade .sh.b{opacity:.5;filter:blur(9px)}
+@media (max-width:760px){#shade .sh.a{opacity:.6;filter:none}}
 </style>
 </head>
 <body>
-<div id="cloth"></div><div id="nature-layer" aria-hidden="true"></div><div id="prog"></div><div id="cur"></div>
+<div id="cloth"></div>
+<div id="props" aria-hidden="true">
+  <div class="pp pp-cof"><svg viewBox="0 0 150 250"><defs>
+    <radialGradient id="gsh"><stop offset="0" stop-color="#1a0d08" stop-opacity=".55"/><stop offset="1" stop-color="#1a0d08" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gcf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0c29a"/><stop offset=".3" stop-color="#b3804f"/><stop offset=".7" stop-color="#6b4226"/><stop offset="1" stop-color="#2e1a0e"/></linearGradient>
+    <linearGradient id="ggl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".2" stop-color="#fff" stop-opacity=".07"/><stop offset=".8" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity=".4"/></linearGradient>
+    <radialGradient id="gck" cx=".4" cy=".35"><stop offset="0" stop-color="#d6b077"/><stop offset="1" stop-color="#9b7541"/></radialGradient>
+    <clipPath id="gcl"><path d="M26 50H110L100 218Q68 226 36 218Z"/></clipPath></defs>
+    <ellipse cx="100" cy="232" rx="64" ry="13" fill="url(#gsh)" transform="rotate(8 100 232)"/>
+    <ellipse cx="68" cy="226" rx="57" ry="13" fill="url(#gck)" stroke="#7d5b30" stroke-width="1.5"/>
+    <g clip-path="url(#gcl)"><rect x="20" y="50" width="96" height="176" fill="url(#gcf)"/>
+      <path d="M30 128C48 104 60 146 84 122S104 136 108 112" stroke="#f3e6d0" stroke-width="9" opacity=".38" fill="none" stroke-linecap="round"/>
+      <path d="M30 160C52 146 64 176 90 156" stroke="#e9d3b2" stroke-width="6" opacity=".25" fill="none" stroke-linecap="round"/>
+      <ellipse cx="68" cy="68" rx="44" ry="9" fill="#ecd6b0"/></g>
+    <g fill="#fff" fill-opacity=".38" stroke="#fff" stroke-opacity=".75" stroke-width="1.5"><rect x="38" y="50" width="31" height="29" rx="7" transform="rotate(-14 54 64)"/><rect x="71" y="56" width="29" height="28" rx="7" transform="rotate(12 86 70)"/><rect x="50" y="88" width="27" height="26" rx="7" transform="rotate(8 63 100)"/></g>
+    <path d="M90 2L64 198" stroke="#f4efe4" stroke-width="8" stroke-linecap="round"/><path d="M90 2L64 198" stroke="#2f6b4a" stroke-width="8" stroke-dasharray="8 8"/>
+    <path d="M26 50H110L100 218Q68 226 36 218Z" fill="url(#ggl)"/><ellipse cx="68" cy="50" rx="42" ry="8" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2"/>
+    <path d="M37 206Q68 216 99 206L100 218Q68 226 36 218Z" fill="#fff" fill-opacity=".3"/>
+    <path d="M33 62L40 208" stroke="#fff" stroke-opacity=".55" stroke-width="4" stroke-linecap="round"/><path d="M104 70L97 190" stroke="#fff" stroke-opacity=".3" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#fff" fill-opacity=".3" stroke="#fff" stroke-opacity=".75" stroke-width=".8"><circle cx="46" cy="112" r="2.6"/><circle cx="52" cy="150" r="2"/><circle cx="43" cy="176" r="3"/><circle cx="90" cy="104" r="2.2"/><circle cx="96" cy="142" r="3"/><circle cx="84" cy="182" r="2"/><circle cx="62" cy="196" r="2.4"/><circle cx="76" cy="132" r="1.8"/><circle cx="37" cy="86" r="1.8"/></g></svg></div>
+  <div class="pp pp-cam"><svg viewBox="0 0 270 220"><defs>
+    <radialGradient id="csh"><stop offset="0" stop-color="#1a0d08" stop-opacity=".5"/><stop offset="1" stop-color="#1a0d08" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cbd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c3e5d4"/><stop offset="1" stop-color="#8dc0a9"/></linearGradient>
+    <radialGradient id="cln" cx=".38" cy=".34" r=".7"><stop offset="0" stop-color="#43606c"/><stop offset=".5" stop-color="#14232a"/><stop offset="1" stop-color="#070d10"/></radialGradient>
+    <linearGradient id="cmt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a8488"/><stop offset=".5" stop-color="#262c2f"/><stop offset="1" stop-color="#0e1214"/></linearGradient></defs>
+    <ellipse cx="156" cy="198" rx="116" ry="20" fill="url(#csh)" transform="rotate(4 156 198)"/>
+    <path d="M30 78C-8 58 -6 152 54 178" fill="none" stroke="#8f5632" stroke-width="11" stroke-linecap="round"/><path d="M30 78C-8 58 -6 152 54 178" fill="none" stroke="#d9a070" stroke-width="2" stroke-dasharray="3 7" opacity=".7"/>
+    <rect x="26" y="76" width="212" height="122" rx="32" fill="#6fa591"/><rect x="22" y="56" width="212" height="122" rx="32" fill="url(#cbd)"/>
+    <rect x="24" y="58" width="208" height="118" rx="30" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+    <rect x="40" y="70" width="52" height="26" rx="7" fill="#f4efe2" stroke="#c9c2b0"/><path d="M52 70v26M64 70v26M76 70v26" stroke="#d9d2c0"/><circle cx="104" cy="82" r="2.6" fill="#e0443a"/>
+    <rect x="176" y="70" width="34" height="20" rx="6" fill="#1b2a30"/><rect x="180" y="73" width="10" height="5" rx="2" fill="#fff" opacity=".35"/><circle cx="206" cy="64" r="8" fill="#ece6d6" stroke="#b9b29f"/>
+    <circle cx="132" cy="136" r="52" fill="#000" opacity=".25"/><circle cx="128" cy="128" r="50" fill="url(#cmt)"/><circle cx="128" cy="128" r="45" fill="none" stroke="#a6aeb1" stroke-width="1" stroke-dasharray="1.5 4"/>
+    <circle cx="128" cy="128" r="40" fill="#0b1114"/><circle cx="128" cy="128" r="34" fill="url(#cln)"/><circle cx="128" cy="128" r="20" fill="#0a1216" stroke="#30505c" stroke-width="2"/>
+    <ellipse cx="115" cy="114" rx="11" ry="7" fill="#fff" opacity=".6" transform="rotate(-35 115 114)"/><circle cx="144" cy="144" r="5" fill="#7fb4c8" opacity=".35"/></svg></div>
+</div>
+<div id="nature-layer" aria-hidden="true"></div><div id="grass" aria-hidden="true"></div><div id="shade" aria-hidden="true"><canvas class="sh a"></canvas><canvas class="sh b"></canvas></div><div id="prog"></div><div id="cur"></div>
 <a class="logo" href="#top" aria-label="Back to top">AC</a>
 <nav aria-label="Sections"><a href="#top">Home</a><a href="#journey">Journey</a><a href="#impact">Impact</a><a href="#process">Process</a><a href="#approach">Approach</a><a href="#contact" class="cta">Let’s talk</a></nav>
 <main>
   <section class="scene hero" id="top" style="--len:170"><div class="stick">
-    <svg class="dec cam" viewBox="0 0 160 160" aria-hidden="true">
-      <rect x="12" y="22" width="136" height="126" rx="30" fill="#9bc9b6"/>
-      <rect x="12" y="22" width="136" height="28" rx="18" fill="#f3ede0"/>
-      <rect x="30" y="28" width="32" height="16" rx="4" fill="#232a2d"/>
-      <circle cx="82" cy="96" r="38" fill="#232a2d"/>
-      <circle cx="82" cy="96" r="24" fill="#323e42"/>
-      <circle cx="74" cy="88" r="5" fill="#fff" opacity=".55"/>
-    </svg>
-    <div class="dec cof" aria-hidden="true"><i class="co"></i><i class="gl"></i><i class="ic i1"></i><i class="ic i2"></i></div>
-    <svg class="dec bf" viewBox="0 0 60 50" aria-hidden="true">
-      <path class="wing left" d="M30 25C15 4 2 10 8 24c4 10 15 9 22 3z" fill="#d9822b"/>
-      <path class="wing right" d="M30 25C45 4 58 10 52 24c-4 10-15 9-22 3z" fill="#d9822b"/>
-      <path d="M30 28C21 32 16 42 23 44c5 0 7-8 7-14zM30 28c9 4 14 14 7 16-5 0-7-8-7-14z" fill="#bf6c1e"/>
-      <path d="M30 18v26" stroke="#26170e" stroke-width="2.2" stroke-linecap="round"/>
+    <svg class="dec bf" viewBox="0 0 100 90" aria-hidden="true">
+      <defs><linearGradient id="bw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb84d"/><stop offset="1" stop-color="#e8731c"/></linearGradient><linearGradient id="bh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9ad3e"/><stop offset="1" stop-color="#d9651a"/></linearGradient>
+      <g id="wl"><path d="M49 44C44 24 26 8 10 12C2 15 3 28 10 36C19 46 36 49 49 47Z" fill="url(#bw)" stroke="#1c120a" stroke-width="1.6" stroke-linejoin="round"/><path d="M49 49C36 50 20 52 16 62C12 72 24 82 35 75C44 69 49 60 49 52Z" fill="url(#bh)" stroke="#1c120a" stroke-width="1.6" stroke-linejoin="round"/>
+      <g fill="none" stroke="#1c120a" stroke-width="1" stroke-linecap="round" opacity=".85"><path d="M49 45C38 33 24 22 11 15"/><path d="M49 46C37 40 22 35 6 27"/><path d="M49 47C36 46 20 44 9 40"/><path d="M49 51C38 57 28 64 20 71"/><path d="M49 50C36 52 24 56 17 62"/></g>
+      <path d="M10 12C2 15 3 28 10 36" fill="none" stroke="#1c120a" stroke-width="3.4" stroke-linecap="round"/><path d="M16 62C12 72 24 82 35 75" fill="none" stroke="#1c120a" stroke-width="3" stroke-linecap="round"/>
+      <g fill="#fff8e8"><circle cx="7.6" cy="18" r="1.3"/><circle cx="7" cy="24.5" r="1.2"/><circle cx="8.6" cy="30.5" r="1.1"/><circle cx="18" cy="9.6" r="1.2"/><circle cx="25" cy="13" r="1"/><circle cx="14.5" cy="68" r="1.2"/><circle cx="19" cy="75.5" r="1.2"/><circle cx="27" cy="79" r="1.1"/></g></g></defs>
+      <g class="wing left"><use href="#wl"/></g><g class="wing right"><use href="#wl" transform="translate(100 0) scale(-1 1)"/></g>
+      <ellipse cx="50" cy="46" rx="2.7" ry="19" fill="#241710"/><circle cx="50" cy="26" r="3.5" fill="#241710"/><path d="M47.7 34h4.6M47.5 40h5M47.5 46h5M47.9 52h4.2" stroke="#7a5638" stroke-width=".7"/>
+      <path d="M48.6 22.5C46 14 41 11 38 12M51.4 22.5C54 14 59 11 62 12" fill="none" stroke="#241710" stroke-width="1" stroke-linecap="round"/><circle cx="38" cy="12" r="1.4" fill="#241710"/><circle cx="62" cy="12" r="1.4" fill="#241710"/>
     </svg>
     <div class="in"><h1 class="rt name" id="name"></h1>
       <div class="hrow"><div class="pc hpc"><div class="pi">
@@ -346,6 +372,33 @@ if(nature&&!rm){
   nature.appendChild(frag);
 }
 
+/* Dappled tree shade: leaf-gap textures are painted once, then drift slowly like a breeze in the canopy */
+(()=>{
+ /* Leafy branches hanging from the tree overhead. Their shadows are drawn live, so the leaves sway and flutter with a wandering breeze. */
+ const cvA=$(".sh.a"),cvB=$(".sh.b");
+ const wind=t=>Math.sin(t*.7)*.55+Math.sin(t*1.9+1.3)*.3+Math.sin(t*3.7+.4)*.15;
+ /* [anchorX,anchorY (share of screen), direction, length, curve, leaf size, phase] */
+ const mkL=(cv,sc,fill,defs,id)=>{if(!cv)return null;return{cv,g:cv.getContext("2d"),sc,fill,uu:1,br:defs.map((d,i)=>{const lv=[];for(let j=0,q=.07;q<1;q+=.05,j++)for(const side of[1,-1]){const z=id*400+i*60+j*2+(side>0?0:1);lv.push({s:q,side,k:.85+(rnd(z)+1)/2*.3,lean:.72+rnd(z+9)*.2,i:j*2+(side>0?0:1)})}return{ax:d[0],ay:d[1],base:d[2],len:d[3],curve:d[4],L:d[5],ph:d[6],lv}})}};
+ /* branches spread around the whole frame and reaching well inside, so most of the cloth sits in leafy shade with sun showing through the gaps */
+ const gen=(n,sd,L0,L1,l0,l1)=>Array.from({length:n},(_,i)=>{const t=(i+.5)/n+rnd(sd+i)*.02,e=t*4,k=Math.floor(e)%4,f=e-Math.floor(e);let x,y;if(k===0){x=f;y=-.05}else if(k===1){x=1.05;y=f}else if(k===2){x=1-f;y=1.05}else{x=-.05;y=1-f}
+  return[x,y,Math.atan2(.5-y,.5-x)+rnd(sd+i+30)*.5,l0+(rnd(sd+i+60)+1)/2*(l1-l0),rnd(sd+i+90)*.4,L0+(rnd(sd+i+120)+1)/2*(L1-L0),i*1.9]});
+ const A=mkL(cvA,mob?.4:.6,"rgb(112,110,146)",gen(mob?5:13,3,56,74,480,720),1);
+ const B=mob?null:mkL(cvB,.45,"rgb(126,124,160)",gen(5,41,84,108,560,760),2);
+ function size(){[A,B].forEach(l=>{if(!l)return;l.cv.width=Math.max(2,innerWidth*l.sc|0);l.cv.height=Math.max(2,innerHeight*l.sc|0);l.uu=Math.min(1.15,Math.max(.55,innerWidth/1400))*l.sc})}
+ function leaf(g,x,y,a,L){g.save();g.translate(x,y);g.rotate(a);const w=L*.42;g.beginPath();g.moveTo(0,0);g.bezierCurveTo(L*.25,-w,L*.72,-w*.9,L,0);g.bezierCurveTo(L*.72,w*.9,L*.25,w,0,0);g.fill();g.restore()}
+ function draw(l,t){const{g,cv,uu}=l;g.clearRect(0,0,cv.width,cv.height);g.fillStyle=g.strokeStyle=l.fill;g.lineCap="round";
+  l.br.forEach(b=>{const wv=wind(t+b.ph),th=.07*wv,len=b.len*uu,st=14*uu,n=Math.floor(len/st),pts=[];let x=b.ax*cv.width,y=b.ay*cv.height;
+   g.beginPath();g.moveTo(x,y);for(let i=1;i<=n;i++){const s=i/n,a=b.base+b.curve*s+th*s*(1+s);x+=Math.cos(a)*st;y+=Math.sin(a)*st;pts.push([x,y,a,s]);g.lineTo(x,y)}g.lineWidth=Math.max(1.5,3.4*uu);g.stroke();
+   const fl=.04+.1*Math.abs(wv);
+   b.lv.forEach(v=>{const p=pts[Math.min(n-1,Math.round(v.s*n))];if(!p)return;leaf(g,p[0],p[1],p[2]+v.side*v.lean+fl*Math.sin(t*2.2+v.i*.9+b.ph),b.L*uu*(1-.45*p[3])*v.k)});
+   const e=pts[n-1];if(e)leaf(g,e[0],e[1],e[2]+.1*Math.sin(t*2+b.ph),b.L*uu*.62)})}
+ size();
+ if(rm){const once=()=>{size();draw(A,0);B&&draw(B,0)};once();addEventListener("resize",once)}
+ else{let last=0;addEventListener("resize",size);const frame=ts=>{requestAnimationFrame(frame);if(ts-last<(mob?33:24))return;last=ts;const t=ts/1000;draw(A,t);B&&draw(B,t*.85)};requestAnimationFrame(frame)}
+ const gr=$("#grass");if(gr&&!mob){const B=sd=>{let t="";for(let i=0;i<64;i++){const x=(rnd(sd+i)+1)/2*300,h=36+(rnd(sd+i+90)+1)/2*46,b=rnd(sd+i+40)*18,col=["#3d5a2a","#4f6d33","#2c4620","#5f7b3a"][i%4];t+=`<path d="M${x-4} 90Q${x+b*.4} ${90-h*.6} ${x+b} ${90-h}Q${x+b*.5+3} ${90-h*.5} ${x+4} 90Z" fill="${col}"/>`}return t};
+  gr.innerHTML=`<svg class="l" viewBox="0 0 300 90">${B(5)}</svg><svg class="r" viewBox="0 0 300 90">${B(300)}</svg>`}
+})();
+
 const STM="I turn complex SaaS implementations into on-time, measurable outcomes for Fortune 500 finance teams.";
 const CH=[
 {g:0,w:"2019 – 23",t:"B.Tech, Computer Science & Communication Engineering",o:"KIIT",l:["Graduated with a 9.04 CGPA.","Four years of core computer science and communication engineering."]},
@@ -396,6 +449,7 @@ svg.insertAdjacentHTML("beforeend",'<circle id="dot" r="9" fill="#1b1613" stroke
 
 /* cached layout measurements */
 let lp=-1,la=-1,lj=-1,jmx=0,totScroll=0,lastClothY=NaN,lastQ=-1;
+let lastPf=-1;const props=$("#props"),shadeEl=$("#shade");
 const cpc=$("#cpc");
 
 const F={
@@ -467,9 +521,10 @@ function tick(){
     if(s.f)s.f(s.p);
   }
   const q=cl(y/totScroll);
+  const pf=cl(y/(vh*1.4));if(Math.abs(pf-lastPf)>.003){lastPf=pf;props.style.setProperty("--pf",pf.toFixed(3))}
   if(Math.abs(q-lastQ)>.0005){lastQ=q;prog.style.setProperty("--q",q.toFixed(4))}
   if(!mob){
-    const cy=-((y*.4)%80);
+    const cy=-((y*.4)%72);
     if(Math.abs(cy-lastClothY)>.2){lastClothY=cy;cloth.style.transform=`translate3d(0,${cy.toFixed(1)}px,0)`}
   }
   let k=0;
@@ -497,7 +552,7 @@ measure();kick();
 /* cursor (mouse only) */
 const cu=$("#cur");
 if(fine){let mx=innerWidth/2,my=innerHeight/2,ax=mx,ay=my,cr=false;
- const lp2=()=>{ax+=(mx-ax)*.3;ay+=(my-ay)*.3;cu.style.transform=`translate(${ax}px,${ay}px)`;if(Math.abs(mx-ax)+Math.abs(my-ay)>.3)requestAnimationFrame(lp2);else cr=false};
+ const lp2=()=>{ax+=(mx-ax)*.3;ay+=(my-ay)*.3;cu.style.transform=`translate(${ax}px,${ay}px)`;shadeEl.style.translate=`${((ax/innerWidth-.5)*-16).toFixed(1)}px ${((ay/innerHeight-.5)*-12).toFixed(1)}px`;if(Math.abs(mx-ax)+Math.abs(my-ay)>.3)requestAnimationFrame(lp2);else cr=false};
  addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;if(!cr){cr=true;requestAnimationFrame(lp2)}},{passive:true});
  addEventListener("pointerover",e=>cu.classList.toggle("big",!!e.target.closest("a,button,.chip,.stamp")))}else cu.remove();
 
